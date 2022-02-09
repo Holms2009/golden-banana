@@ -1,0 +1,38 @@
+.NavMenu {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+
+  &_horizontal {
+    flex-direction: row;
+  }
+
+  &_vertical {
+    flex-direction: column;
+  }
+
+  &__item {
+    padding-left: 20px;
+    display     : flex;
+    cursor      : pointer;
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      .NavMenu__text {
+        box-shadow: 0 0 20px 0 gold;
+      }
+    }
+  }
+
+  &__icon {}
+
+  &__text {
+    margin    : 0;
+    font-size : 20px;
+    color     : #fff3d6;
+    transition: box-shadow 0.3s ease;
+  }
+}

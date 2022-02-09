@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <PageHeader />
+      <p style={{fontSize: '200px', color: 'gold'}}>Golden banana</p>
     </div>
   );
 }
