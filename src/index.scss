@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Curse Casual';
+  font-weight: 400;
+  font-style : normal;
+  src        : local('Curse Casual'), url('./assets/fonts/cursecasual.otf') format('opentype');
+}
+
+body {
+  margin                 : 0;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  * {
+    font-family: 'Curse Casual', sans-serif;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

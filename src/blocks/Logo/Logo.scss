@@ -1,0 +1,17 @@
+.Logo {
+  display    : flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__image {
+    width : 40px;
+    height: 40px;
+  }
+
+  &__text {
+    margin   : 0;
+    font-size: 20px;
+    color    : #fff3d6;
+    transform: rotate(-5deg) translateY(-5px);
+  }
+}
