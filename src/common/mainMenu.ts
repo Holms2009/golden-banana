@@ -3,9 +3,9 @@ import goldPiggyBank from '../assets/images/piggy_bank_gold.png';
 import houseIcon from '../assets/images/city.png';
 
 const mainMenu: MenuItem[] = [
-  { text: 'Главная', image: guildBanner },
-  { text: 'Вклады', image: goldPiggyBank },
-  { text: 'Здания', image: houseIcon }
+  { text: 'Главная', image: guildBanner, link: '/' },
+  { text: 'Вклады', image: goldPiggyBank, link: '/contributions' },
+  { text: 'Здания', image: houseIcon, link: '/buildings' }
 ]
 
 export default mainMenu;

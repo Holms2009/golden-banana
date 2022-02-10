@@ -1,5 +1,8 @@
 import block from "bem-cn";
+
 import './NavMenu.scss';
+
+import { Link } from "react-router-dom";
 
 const b = block('NavMenu');
 
@@ -13,10 +16,10 @@ const NavMenu = ({ menuItems, direction }: Props) => {
   return (
     <nav className={b({ horizontal: direction === 'horizontal', vertical: direction === 'vertical' })}>
       {menuItems.map(item => (
-        <div className={b('item')}>
-          <img className={b('icon')} src={item.image} alt="Иуонка пункта меню"/>
+        <Link className={b('item')} to={item.link}>
+          <img className={b('icon')} src={item.image} alt="Иуонка пункта меню" />
           <p className={b('text')}>{item.text}</p>
-        </div>
+        </Link>
       ))}
     </nav>
   )
