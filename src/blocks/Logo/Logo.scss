@@ -3,15 +3,18 @@
   align-items    : center;
   text-decoration: none;
 
-  &:hover {
-    .Logo__image {
-      transform: scale(1.5) translate(3px, 5px) rotate(40deg);
-    }
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      .Logo__image {
+        transform: scale(1.5) translate(3px, 5px) rotate(40deg);
+      }
 
-    .Logo__text {
-      box-shadow: 0 0 20px 0 gold;
+      .Logo__text {
+        filter: drop-shadow(0 0 10px gold);
+      }
     }
   }
+
 
   &__image {
     width     : 40px;
@@ -20,10 +23,10 @@
   }
 
   &__text {
-    margin   : 0;
-    font-size: 22px;
-    color    : #fff3d6;
-    transform: rotate(-5deg) translateY(-5px);
-    transition: box-shadow 0.3s ease-out;
+    margin    : 0;
+    font-size : 22px;
+    color     : #fff3d6;
+    transform : rotate(-5deg) translateY(-5px);
+    transition: filter 0.3s ease-out;
   }
 }

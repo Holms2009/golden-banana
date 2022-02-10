@@ -4,7 +4,7 @@ import './NavMenu.scss';
 const b = block('NavMenu');
 
 type Props = {
-  menuItems: string[],
+  menuItems: MenuItem[],
   direction: 'horizontal' | 'vertical'
 }
 
@@ -14,8 +14,8 @@ const NavMenu = ({ menuItems, direction }: Props) => {
     <nav className={b({ horizontal: direction === 'horizontal', virtical: direction === 'vertical' })}>
       {menuItems.map(item => (
         <div className={b('item')}>
-          <span className={b('icon')}></span>
-          <p className={b('text')}>{item}</p>
+          <img className={b('icon')} src={item.image} alt="Иуонка пункта меню"/>
+          <p className={b('text')}>{item.text}</p>
         </div>
       ))}
     </nav>
