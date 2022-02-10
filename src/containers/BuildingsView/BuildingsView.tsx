@@ -7,7 +7,7 @@ const b = block('BuildingsView');
 const BuildingsView = () => {
   return (
     <div className={b()}>
-      <p style={{color: 'gold', fontSize: '50px'}}>Buildings Page</p>
+      <h2 className={b('title')}>Наши здания</h2>
     </div>
   )
 }

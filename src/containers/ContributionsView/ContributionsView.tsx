@@ -7,7 +7,7 @@ const b = block('ContributionsView');
 const ContributionsView = () => {
   return (
     <div className={b()}>
-      <p style={{color: 'gold', fontSize: '50px'}}>Contributions Page</p>
+      <h2 className={b('title')}>Вклады за прошедшую неделю</h2>
     </div>
   )
 }
