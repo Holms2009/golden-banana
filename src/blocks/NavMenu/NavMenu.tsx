@@ -11,7 +11,7 @@ type Props = {
 const NavMenu = ({ menuItems, direction }: Props) => {
 
   return (
-    <nav className={b({ horizontal: direction === 'horizontal', virtical: direction === 'vertical' })}>
+    <nav className={b({ horizontal: direction === 'horizontal', vertical: direction === 'vertical' })}>
       {menuItems.map(item => (
         <div className={b('item')}>
           <img className={b('icon')} src={item.image} alt="Иуонка пункта меню"/>
