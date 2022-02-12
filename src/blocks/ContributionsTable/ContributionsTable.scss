@@ -30,6 +30,11 @@
       }
     }
 
+    &-text {
+      cursor     : pointer;
+      user-select: none;
+    }
+
     &-icon {
       width          : 30px;
       height         : 35px;

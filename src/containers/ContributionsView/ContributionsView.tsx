@@ -17,6 +17,13 @@ const ContributionsView = () => {
       <h2 className={b('title')}>Вклады за прошедшую неделю</h2>
       <ContributionsTable weekNumber={week.current} />
       <h2 className={b('title')}>Вклады за предыдущие недели</h2>
+      {
+        week.current > 2 ?
+          Array(week.current - 2).fill(1).map((oldWeek, index) => (
+            <ContributionsTable weekNumber={week.current - (index + 1)} key={index} />
+          )) :
+          null
+      }
     </div>
   )
 }

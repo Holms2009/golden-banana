@@ -8,7 +8,7 @@ function selectExPlayers(players: Player[]): Player[] {
   return result;
 }
 
-function sortPlayersByContributions(players: WeekPlayer[], direction: 'ltg' | 'gtl') {
+function sortPlayersByContributions(players: WeekPlayer[], direction: string) {
   players.sort((a, b) => direction === 'gtl' ? b.contribution - a.contribution : a.contribution - b.contribution);
 }
 

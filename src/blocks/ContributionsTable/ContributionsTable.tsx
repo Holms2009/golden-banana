@@ -9,15 +9,17 @@ import trophy from '../../assets/images/bounty_trophy.png';
 import gold from '../../assets/images/gold.png';
 import character from '../../assets/images/wallace.png';
 import { selectPlayersByWeek, sortPlayersByContributions } from "../../utils/playersSort";
+import { useState } from "react";
 
 const b = block('ContributionsTable');
 
 type Props = {
   weekNumber: number;
-  sortByContributions?: 'ltg' | 'gtl' | false;
 }
 
-const ContributionsTable = ({ sortByContributions = 'gtl', weekNumber }: Props) => {
+const ContributionsTable = ({ weekNumber }: Props) => {
+  const [sortByContributions, setSortByContributions] = useState('gtl');
+
   const dataStatus = useAppSelector(getDataFetchStatus);
   // const data = useAppSelector(selectPlayers);
   const data: Player[] = [
@@ -87,6 +89,14 @@ const ContributionsTable = ({ sortByContributions = 'gtl', weekNumber }: Props) 
 
   if (sortByContributions) sortPlayersByContributions(thisWeekPlayers, sortByContributions)
 
+  const changeBCSort = () => {
+    if (sortByContributions === 'gtl') {
+      setSortByContributions('ltg');
+    } else {
+      setSortByContributions('gtl');
+    }
+  }
+
   return (
     <table className={b()}>
       <thead className={b('head')}>
@@ -94,19 +104,19 @@ const ContributionsTable = ({ sortByContributions = 'gtl', weekNumber }: Props) 
           <th className={b('head-cell')}>
             <div className={b('head-cell-container')}>
               <img className={b('head-icon')} src={trophy} alt="Иконка кубка" />
-              <span>Место</span>
+              <span className={b('head-text')}>Место</span>
             </div>
           </th>
           <th className={b('head-cell')}>
             <div className={b('head-cell-container')}>
               <img className={b('head-icon')} src={character} alt="Иконка кубка" />
-              <span>Имя игрока</span>
+              <span className={b('head-text')}>Имя игрока</span>
             </div>
           </th>
           <th className={b('head-cell')}>
-            <div className={b('head-cell-container')}>
+            <div className={b('head-cell-container')} >
               <img className={b('head-icon')} src={gold} alt="Иконка кубка" />
-              <span>Вклад</span>
+              <span className={b('head-text')} onClick={changeBCSort}>Вклад</span>
             </div>
           </th>
         </tr>
