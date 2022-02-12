@@ -1,0 +1,168 @@
+.ContributionsTable {
+  box-sizing      : border-box;
+  margin-top      : 50px;
+  padding         : 10px 20px;
+  width           : 100%;
+  color           : #fff3d6;
+  background-color: #3d2937;
+  border          : 5px solid #714059;
+  border-radius   : 30px;
+  border-spacing  : 30px 10px;
+  table-layout    : fixed;
+
+  &__head {
+    &-row {
+      margin-bottom : 10px;
+      border-bottom : 5px solid #714059;
+      font-size     : 35px;
+      letter-spacing: 2px;
+    }
+
+    &-cell {
+      border-radius: 10px;
+      border-bottom: 1px solid gold;
+      text-align   : center;
+
+      &-container {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+      }
+    }
+
+    &-icon {
+      width          : 30px;
+      height         : 35px;
+      object-fit     : cover;
+      object-position: center;
+      margin-right   : 10px;
+    }
+  }
+
+  &__body {
+    &-row {
+      font-size: 30px;
+
+      &_gold {
+        color: gold;
+      }
+
+      &_silver {
+        color: #C0C0C0;
+      }
+
+      &_bronze {
+        color: #CD7F32;
+      }
+    }
+  }
+
+  &__error {
+    padding  : 100px 0;
+    font-size: 50px;
+  }
+
+  @media screen and (max-width: 1366px) {
+    margin-top    : 35px;
+    border-spacing: 25px 8px;
+
+    &__head {
+      &-row {
+        font-size: 30px;
+      }
+
+      &-cell {
+        border-radius: 7px;
+      }
+
+      &-icon {
+        width : 25px;
+        height: 28px;
+      }
+    }
+
+    &__body {
+      &-row {
+        font-size: 25px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__head {
+      &-row {
+        font-size: 25px;
+      }
+
+      &-icon {
+        width : 20px;
+        height: 23px;
+      }
+    }
+
+    &__body {
+      &-row {
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-top    : 25px;
+    padding       : 5px 10px;
+    border-spacing: 10px 5px;
+
+    &__head {
+      &-row {
+        font-size: 20px;
+      }
+
+      &-cell {
+        border-radius: 5px;
+
+        &:nth-child(1) {
+          width: 80px;
+        }
+      }
+
+      &-icon {
+        margin-right: 6px;
+        width       : 17px;
+        height      : 20px;
+      }
+    }
+
+    &__body {
+      &-row {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    margin-top: 20px;
+
+    &__head {
+      &-row {
+        font-size: 15px;
+      }
+
+      &-cell {
+        &:nth-child(1) {
+          width: 60px;
+        }
+      }
+
+      &-icon {
+        width : 15px;
+        height: 18px;
+      }
+    }
+
+    &__body {
+      &-row {
+        font-size: 13px;
+      }
+    }
+  }
+}

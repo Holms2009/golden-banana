@@ -7,7 +7,17 @@ import MainView from '../../containers/MainView/MainView';
 import ContributionsView from '../../containers/ContributionsView/ContributionsView';
 import BuildingsView from '../../containers/BuildingsView/BuildingsView';
 
+import { useAppDispatch } from "../../store/store";
+import { loadPlayers } from "../../store/asyncActions";
+import { useEffect } from "react";
+
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(loadPlayers());
+  })
+
   return (
     <div className="App">
       <PageHeader />

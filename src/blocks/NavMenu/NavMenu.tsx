@@ -15,8 +15,8 @@ const NavMenu = ({ menuItems, direction }: Props) => {
 
   return (
     <nav className={b({ horizontal: direction === 'horizontal', vertical: direction === 'vertical' })}>
-      {menuItems.map(item => (
-        <Link className={b('item')} to={item.link}>
+      {menuItems.map((item, index) => (
+        <Link className={b('item')} to={item.link} key={index}>
           <img className={b('icon')} src={item.image} alt="Иуонка пункта меню" />
           <p className={b('text')}>{item.text}</p>
         </Link>
