@@ -7,7 +7,7 @@ import MainView from '../../containers/MainView/MainView';
 import ContributionsView from '../../containers/ContributionsView/ContributionsView';
 import BuildingsView from '../../containers/BuildingsView/BuildingsView';
 
-import { useAppDispatch } from "../../store/store";
+import { useAppDispatch } from "../../store/hooks";
 import { loadPlayers } from "../../store/asyncActions";
 import { useEffect } from "react";
 

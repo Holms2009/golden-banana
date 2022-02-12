@@ -12,6 +12,10 @@ const b = block('MobileMenu');
 const MobileMenu = () => {
   const [visibility, setVisibility] = useState(false);
 
+  const handleLinkClick = () => {
+    setVisibility(false);
+  }
+
   return (
     <div className={b()}>
       <div className={b('burger')} onClick={() => setVisibility(true)}>
@@ -20,7 +24,7 @@ const MobileMenu = () => {
         <span className={b('line')}></span>
       </div>
       <div className={b('menu', { closed: !visibility })}>
-        <NavMenu menuItems={menuItems} direction="vertical" />
+        <NavMenu menuItems={menuItems} direction="vertical" linkClickHandler={handleLinkClick}/>
         <span className={b('close')} onClick={() => setVisibility(false)}></span>
         <a className={b('logo-link')} href="https://playshoptitans.com/" target='_blank' rel="noreferrer">
           <img className={b('game-logo')} src={gameLogo} alt="Shop Titans logo" />
