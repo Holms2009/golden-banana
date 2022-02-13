@@ -12,7 +12,6 @@ import { getWeek, loadPlayers } from "../../store/asyncActions";
 import { useEffect } from "react";
 
 function App() {
-  const isDev = process.env.NODE_ENV === 'development' ? true : false;
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -24,9 +23,9 @@ function App() {
     <div className="App">
       <PageHeader />
       <Routes>
-        <Route path={isDev ? "/" : '/golden-banana/'} element={<MainView />} />
-        <Route path={isDev ? "/contributions" : '/golden-banana/contributions'} element={<ContributionsView />} />
-        <Route path={isDev ? "/buildings" : '/golden-banana/buildings'} element={<BuildingsView />} />
+        <Route path={"/"} element={<MainView />} />
+        <Route path={"/contributions"} element={<ContributionsView />} />
+        <Route path={"/buildings"} element={<BuildingsView />} />
       </Routes>
     </div>
   );

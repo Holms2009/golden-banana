@@ -20,24 +20,10 @@ const updateWeek = (data: Week) => {
   return updateDoc(doc(db, 'common', 'week'), data);
 }
 
-const updateAll = async () => {
-  const arr: Player[] = [];
-
-  getDocs(collection(db, 'players'))
-    .then(res => {
-      res.forEach(item => {
-        arr.push(item.data() as Player);
-      })
-
-      console.log(arr);
-    })
-}
-
 export {
   fetchPlayers,
   fetchWeek,
   addPlayer,
   updateContribution,
-  updateWeek,
-  updateAll
+  updateWeek
 }
