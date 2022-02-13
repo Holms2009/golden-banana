@@ -9,8 +9,7 @@ import { selectCurrentWeek } from "../../store/getters";
 const b = block('ContributionsView');
 
 const ContributionsView = () => {
-  // const week: Week = useAppSelector(selectCurrentWeek);
-  const week: Week = { current: 2, lastUpdate: new Date() }
+  const week: Week = useAppSelector(selectCurrentWeek);  
 
   return (
     <div className={b()}>

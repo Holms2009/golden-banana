@@ -21,70 +21,8 @@ const ContributionsTable = ({ weekNumber }: Props) => {
   const [sortByContributions, setSortByContributions] = useState('gtl');
 
   const dataStatus = useAppSelector(getDataFetchStatus);
-  // const data = useAppSelector(selectPlayers);
-  const data: Player[] = [
-    {
-      nick: 'Дошик',
-      id: '111111',
-      contributionsHistory: [
-        { weekNumber: 1, contribution: 7777777 },
-        { weekNumber: 2, contribution: 9999999 },
-      ],
-      rank: 'Глава',
-      isInGuild: true
-    },
-    {
-      nick: 'Игрок 1',
-      id: '222222',
-      contributionsHistory: [
-        { weekNumber: 1, contribution: 8999999 },
-        { weekNumber: 2, contribution: 9999999 },
-      ],
-      rank: 'Офицер',
-      isInGuild: true
-    },
-    {
-      nick: 'Игрок 2',
-      id: '333333',
-      contributionsHistory: [
-        { weekNumber: 1, contribution: 9555555 },
-        { weekNumber: 2, contribution: 9999999 },
-      ],
-      rank: 'Участник',
-      isInGuild: true
-    },
-    {
-      nick: 'Игрок 3',
-      id: '444444',
-      contributionsHistory: [
-        { weekNumber: 1, contribution: 9435743 },
-        { weekNumber: 2, contribution: 9999999 },
-      ],
-      rank: 'Участник',
-      isInGuild: true
-    },
-    {
-      nick: 'Игрок 4',
-      id: '555555',
-      contributionsHistory: [
-        { weekNumber: 1, contribution: 8994325 },
-        { weekNumber: 2, contribution: 9999999 },
-      ],
-      rank: 'Участник',
-      isInGuild: false
-    },
-    {
-      nick: 'Игрок 5',
-      id: '666666',
-      contributionsHistory: [
-        { weekNumber: 1, contribution: 9654345 },
-        { weekNumber: 2, contribution: 9999999 },
-      ],
-      rank: 'Участник',
-      isInGuild: true
-    },
-  ]
-
+  const data = useAppSelector(selectPlayers);
+  
   const thisWeekPlayers: WeekPlayer[] = selectPlayersByWeek(data, weekNumber);
 
   if (sortByContributions) sortPlayersByContributions(thisWeekPlayers, sortByContributions)

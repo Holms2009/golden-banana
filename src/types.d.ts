@@ -6,7 +6,7 @@ type MenuItem = {
 
 type Week = {
   current: number;
-  lastUpdate: Date;
+  lastUpdate: Date | null;
 }
 
 type Contribution = {

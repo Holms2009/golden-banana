@@ -8,7 +8,7 @@ import ContributionsView from '../../containers/ContributionsView/ContributionsV
 import BuildingsView from '../../containers/BuildingsView/BuildingsView';
 
 import { useAppDispatch } from "../../store/hooks";
-import { loadPlayers } from "../../store/asyncActions";
+import { getWeek, loadPlayers } from "../../store/asyncActions";
 import { useEffect } from "react";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
 
   useEffect(() => {
     dispatch(loadPlayers());
+    dispatch(getWeek());
   })
 
   return (

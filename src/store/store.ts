@@ -1,24 +1,26 @@
 import { createSlice, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import thunk from 'redux-thunk';
 
-import { loadPlayers, getWeek } from './asyncActions';
+import { loadPlayers, getWeek, addPlayerAndUpdate } from './asyncActions';
 
 type initialStateType = {
   players: Player[];
   statusGetPlayers: 'loading' | 'finished' | 'failed' | null;
   currentWeek: Week | null;
   statusGetWeek: 'loading' | 'finished' | 'failed' | null;
+  statusAddPlayer: 'loading' | 'finished' | 'failed' | null;
 }
 
 const initialState: initialStateType = {
   players: [],
   statusGetPlayers: null,
-  currentWeek: null,
-  statusGetWeek: null
+  currentWeek: {current: 1, lastUpdate: null},
+  statusGetWeek: null,
+  statusAddPlayer: null
 };
 
 const playersSlice = createSlice({
-  name: 'players',
+  name: 'main-store',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -42,6 +44,15 @@ const playersSlice = createSlice({
       })
       .addCase(getWeek.rejected, (state) => {
         state.statusGetWeek = "failed";     
+      })
+      .addCase(addPlayerAndUpdate.pending, (state) => {
+        state.statusAddPlayer = "loading";
+      })
+      .addCase(addPlayerAndUpdate.fulfilled, (state) => {
+        state.statusAddPlayer = "finished";
+      })
+      .addCase(addPlayerAndUpdate.rejected, (state) => {
+        state.statusAddPlayer = "failed";     
       })
   }
 })
