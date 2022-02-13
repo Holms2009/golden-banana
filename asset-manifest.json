@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/golden-banana/static/css/main.b6f291be.css",
-    "main.js": "/golden-banana/static/js/main.e511f6eb.js",
+    "main.js": "/golden-banana/static/js/main.2dcb4eb6.js",
     "static/media/banana-minion.png": "/golden-banana/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/ShopTitans_Logo_RGB.png": "/golden-banana/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
     "static/media/wallace.png": "/golden-banana/static/media/wallace.013fffa8ad3a087586ae.png",
@@ -10,10 +10,10 @@
     "static/media/close.svg": "/golden-banana/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/golden-banana/index.html",
     "main.b6f291be.css.map": "/golden-banana/static/css/main.b6f291be.css.map",
-    "main.e511f6eb.js.map": "/golden-banana/static/js/main.e511f6eb.js.map"
+    "main.2dcb4eb6.js.map": "/golden-banana/static/js/main.2dcb4eb6.js.map"
   },
   "entrypoints": [
     "static/css/main.b6f291be.css",
-    "static/js/main.e511f6eb.js"
+    "static/js/main.2dcb4eb6.js"
   ]
 }
