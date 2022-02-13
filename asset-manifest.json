@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/golden-banana/static/css/main.b6f291be.css",
-    "main.js": "/golden-banana/static/js/main.2dcb4eb6.js",
+    "main.css": "/golden-banana/static/css/main.68921cdd.css",
+    "main.js": "/golden-banana/static/js/main.ac8e6c2b.js",
     "static/media/banana-minion.png": "/golden-banana/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/ShopTitans_Logo_RGB.png": "/golden-banana/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
     "static/media/wallace.png": "/golden-banana/static/media/wallace.013fffa8ad3a087586ae.png",
     "static/media/cursecasual.otf": "/golden-banana/static/media/cursecasual.d773029de52f194921d6.otf",
+    "static/media/goals.png": "/golden-banana/static/media/goals.cc161ea2d07e39b82c14.png",
     "static/media/logo.svg": "/golden-banana/static/media/logo.0188f92be997ee7d8b493a9004df2151.svg",
     "static/media/close.svg": "/golden-banana/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/golden-banana/index.html",
-    "main.b6f291be.css.map": "/golden-banana/static/css/main.b6f291be.css.map",
-    "main.2dcb4eb6.js.map": "/golden-banana/static/js/main.2dcb4eb6.js.map"
+    "main.68921cdd.css.map": "/golden-banana/static/css/main.68921cdd.css.map",
+    "main.ac8e6c2b.js.map": "/golden-banana/static/js/main.ac8e6c2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6f291be.css",
-    "static/js/main.2dcb4eb6.js"
+    "static/css/main.68921cdd.css",
+    "static/js/main.ac8e6c2b.js"
   ]
 }
