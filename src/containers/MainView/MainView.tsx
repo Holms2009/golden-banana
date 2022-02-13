@@ -1,10 +1,11 @@
 import block from "bem-cn";
+import { useState } from "react";
 
 import './MainView.scss';
 import bananaMinion from '../../assets/images/banana-minion.png';
 
 import AddPlayerForm from "../../blocks/AddPlayerForm/AddPlayerForm";
-import { useState } from "react";
+import { updateAll } from "../../firebase/firebaseAPI";
 
 const b = block('MainView');
 
@@ -18,7 +19,7 @@ const MainView = () => {
   return (
     <div className={b()}>
       {showAddPlayer ? <AddPlayerForm handleClose={toggleAddPlayer}/> : null}
-      <img className={b('temp-image')} src={bananaMinion} alt="Банановый миньон" />
+      <img className={b('temp-image')} src={bananaMinion} alt="Банановый миньон" onClick={updateAll}/>
     </div>
   )
 }
