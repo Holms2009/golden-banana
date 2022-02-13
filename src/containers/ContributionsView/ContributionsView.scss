@@ -5,6 +5,7 @@
   display       : flex;
   flex-direction: column;
   align-items   : center;
+  position      : relative;
 
   &__title {
     margin        : 0;
@@ -17,10 +18,33 @@
     }
   }
 
+  &__add-contributions {
+    width          : 35px;
+    height         : 35px;
+    background     : url('../../assets/images/goals.png') no-repeat 50% 50%;
+    background-size: cover;
+    position       : absolute;
+    top            : 20px;
+    right          : 20px;
+    cursor         : pointer;
+    transition     : transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .CreateContributionsForm {
+    position: fixed;
+    top     : 0;
+    left    : 0;
+    z-index : 9999;
+  }
+
   @media screen and (max-width: 1366px) {
     &__title {
-      font-size     : 40px;
-  
+      font-size: 40px;
+
       &:not(:first-of-type) {
         margin-top: 40px;
       }
@@ -35,8 +59,8 @@
     max-width: 90vw;
 
     &__title {
-      font-size     : 30px;
-  
+      font-size: 30px;
+
       &:not(:first-of-type) {
         margin-top: 30px;
       }
@@ -45,7 +69,7 @@
 
   @media screen and (max-width: 360px) {
     &__title {
-      font-size     : 25px;
+      font-size: 25px;
     }
   }
 }

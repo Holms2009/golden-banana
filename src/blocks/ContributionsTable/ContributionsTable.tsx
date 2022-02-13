@@ -65,7 +65,7 @@ const ContributionsTable = ({ weekNumber }: Props) => {
             <tr className={b('body-row', { gold: index === 0, silver: index === 1, bronze: index === 2 })} key={player.id}>
               <td className={b('body-cell', 'place')}>{index + 1}</td>
               <td className={b('body-cell', 'nick')}>{player.nick}</td>
-              <td className={b('body-cell', 'contributions')}>{String(player.contribution)}</td>
+              <td className={b('body-cell', 'contributions')}>{player.contribution.toLocaleString('ru')}</td>
             </tr>)) :
           dataStatus === 'loading' ?
             Array(10).fill(1).map((item, index) => (

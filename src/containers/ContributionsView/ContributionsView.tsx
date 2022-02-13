@@ -11,7 +11,7 @@ import { selectCurrentWeek } from "../../store/getters";
 const b = block('ContributionsView');
 
 const ContributionsView = () => {
-  const [showContributionsForm, setShowContributionsForm] = useState(true);
+  const [showContributionsForm, setShowContributionsForm] = useState(false);
   const week: Week = useAppSelector(selectCurrentWeek);
 
   const toggleAddContributionsForm = (evt: React.MouseEvent<HTMLElement>) => {
@@ -33,6 +33,7 @@ const ContributionsView = () => {
           null
       }
       {showContributionsForm ? <CreateContributionsForm handleClose={toggleAddContributionsForm} /> : null}
+      {/* <span className={b('add-contributions')} onClick={toggleAddContributionsForm}></span> */}
     </div>
   )
 }
