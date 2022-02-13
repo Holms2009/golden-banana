@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { addPlayer, fetchPlayers, fetchWeek } from "../firebase/firebaseAPI";
+import { addPlayer, fetchPlayers, fetchWeek, updateContribution, updateWeek } from "../firebase/firebaseAPI";
 
 const loadPlayers = createAsyncThunk(
   'players/loadPlayers',
@@ -23,7 +23,7 @@ const loadPlayers = createAsyncThunk(
 )
 
 const getWeek = createAsyncThunk(
-  'getWeek',
+  'week/get',
   async (_, { rejectWithValue }) => {
     try {
       let data;
@@ -45,7 +45,6 @@ const addPlayerAndUpdate = createAsyncThunk(
   'players/addPlayer',
   async (player: Player) => {
     try {
-      console.log('adding player: ', player);
       addPlayer(player);
     } catch (err: any) {
       console.log(err.message);
@@ -53,4 +52,27 @@ const addPlayerAndUpdate = createAsyncThunk(
   }
 )
 
-export { loadPlayers, getWeek, addPlayerAndUpdate }
+const updatePlayerContributions = createAsyncThunk(
+  'playets/updateContributions',
+  async (data: NewContribution) => {
+    try {
+      await updateContribution(data);
+    } catch (err: any) {
+      console.log(err.message);
+    }
+  }
+)
+
+const updateWeekAction = createAsyncThunk(
+  'week/update',
+  async (data: Week) => {
+    try {
+      await updateWeek(data);
+    } catch (err: any) {
+      console.log(err.message);
+
+    }
+  }
+)
+
+export { loadPlayers, getWeek, addPlayerAndUpdate, updatePlayerContributions, updateWeekAction }

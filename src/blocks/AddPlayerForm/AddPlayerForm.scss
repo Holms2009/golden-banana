@@ -1,0 +1,42 @@
+.AddPlayerForm {
+  padding         : 40px 25px;
+  width           : 300px;
+  display         : flex;
+  flex-direction  : column;
+  background-color: #3d2937;
+  border          : 5px solid #714059;
+  border-radius   : 30px;
+  position        : fixed;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
+
+  &__title {
+    margin       : 0;
+    margin-bottom: 25px;
+    font-size    : 28px;
+    color        : #fff3d6;
+  }
+
+  &__input {
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__close {
+    width          : 20px;
+    height         : 20px;
+    background     : url('../../assets/images/close.svg') no-repeat 50% 50%;
+    background-size: cover;
+    position       : absolute;
+    top            : 15px;
+    right          : 15px;
+    cursor         : pointer;
+    transition     : transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

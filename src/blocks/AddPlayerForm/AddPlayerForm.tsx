@@ -4,12 +4,18 @@ import { nanoid } from "nanoid";
 
 import './AddPlayerForm.scss';
 import { addPlayerAndUpdate, loadPlayers } from "../../store/asyncActions";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { selectCurrentWeek } from "../../store/getters";
 
 const b = block('AddPlayerForm');
 
-const AddPlayerForm = () => {
+type Props = {
+  handleClose?: () => void;
+}
+
+const AddPlayerForm = ({handleClose}: Props) => {
   const dispatch = useAppDispatch();
+  const week: Week = useAppSelector(selectCurrentWeek);
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
@@ -23,12 +29,8 @@ const AddPlayerForm = () => {
       id: nanoid(8),
       contributionsHistory: [
         {
-          weekNumber: 1,
+          weekNumber: week.current,
           contribution: Number(data.get('contributions-past'))
-        },
-        {
-          weekNumber: 2,
-          contribution: Number(data.get('contributions'))
         }
       ],
       isInGuild: true
@@ -40,12 +42,13 @@ const AddPlayerForm = () => {
   }
 
   return (
-    <form action="POST" onSubmit={handleSubmit}>
-      <input type="text" name="nick" placeholder="Введите ник игрока" required />
-      <input type="text" name="rank" placeholder="Введите ранг игрока" required />
-      <input type="number" name="contributions" placeholder="Введите вклад игрока" required />
-      <input type="number" name="contributions-past" placeholder="Введите ещё вклад игрока" required />
-      <input type="submit" name="submit" value="Добавить игрока" />
+    <form className={b()} action="POST" onSubmit={handleSubmit}>
+      <h3 className={b('title')}>Добавление нового игрока</h3>
+      <input className={b('input')} type="text" name="nick" placeholder="Введите ник игрока" required />
+      <input className={b('input')} type="text" name="rank" placeholder="Введите ранг игрока" required />
+      <input className={b('input')} type="number" name="contributions" placeholder="Введите вклад игрока" required />
+      <input className={b('input')} type="submit" name="submit" value="Добавить игрока" />
+      <span className={b('close')} onClick={handleClose}></span>
     </form>
   )
 }

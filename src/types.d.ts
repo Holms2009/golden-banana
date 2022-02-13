@@ -33,5 +33,11 @@ type WeekData = {
   data: Player[];
 };
 
+type NewContribution = {
+  id: string;
+  nick: string;
+  contributionsHistory: Contribution[];
+}
+
 type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;

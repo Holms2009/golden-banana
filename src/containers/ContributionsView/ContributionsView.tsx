@@ -1,15 +1,24 @@
 import block from "bem-cn";
+import { useState } from "react";
 
 import './ContributionsView.scss';
 
 import ContributionsTable from "../../blocks/ContributionsTable/ContributionsTable";
+import CreateContributionsForm from "../../blocks/CreateContributionsForm/CreateContributionsForm";
 import { useAppSelector } from "../../store/hooks";
 import { selectCurrentWeek } from "../../store/getters";
 
 const b = block('ContributionsView');
 
 const ContributionsView = () => {
-  const week: Week = useAppSelector(selectCurrentWeek);  
+  const [showContributionsForm, setShowContributionsForm] = useState(true);
+  const week: Week = useAppSelector(selectCurrentWeek);
+
+  const toggleAddContributionsForm = (evt: React.MouseEvent<HTMLElement>) => {
+    if (evt.target !== evt.currentTarget) return;
+
+    setShowContributionsForm(!showContributionsForm);
+  }
 
   return (
     <div className={b()}>
@@ -23,6 +32,7 @@ const ContributionsView = () => {
           )) :
           null
       }
+      {showContributionsForm ? <CreateContributionsForm handleClose={toggleAddContributionsForm} /> : null}
     </div>
   )
 }

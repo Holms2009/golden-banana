@@ -1,7 +1,7 @@
 import { createSlice, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import thunk from 'redux-thunk';
 
-import { loadPlayers, getWeek, addPlayerAndUpdate } from './asyncActions';
+import { loadPlayers, getWeek, addPlayerAndUpdate, updatePlayerContributions } from './asyncActions';
 
 type initialStateType = {
   players: Player[];
@@ -9,6 +9,7 @@ type initialStateType = {
   currentWeek: Week | null;
   statusGetWeek: 'loading' | 'finished' | 'failed' | null;
   statusAddPlayer: 'loading' | 'finished' | 'failed' | null;
+  statusUpdateContributions: 'loading' | 'finished' | 'failed' | null;
 }
 
 const initialState: initialStateType = {
@@ -16,7 +17,8 @@ const initialState: initialStateType = {
   statusGetPlayers: null,
   currentWeek: {current: 1, lastUpdate: null},
   statusGetWeek: null,
-  statusAddPlayer: null
+  statusAddPlayer: null,
+  statusUpdateContributions: null
 };
 
 const playersSlice = createSlice({
@@ -53,6 +55,15 @@ const playersSlice = createSlice({
       })
       .addCase(addPlayerAndUpdate.rejected, (state) => {
         state.statusAddPlayer = "failed";     
+      })
+      .addCase(updatePlayerContributions.pending, (state) => {
+        state.statusUpdateContributions = "loading";
+      })
+      .addCase(updatePlayerContributions.fulfilled, (state) => {
+        state.statusUpdateContributions = "finished";
+      })
+      .addCase(updatePlayerContributions.rejected, (state) => {
+        state.statusUpdateContributions = "failed";     
       })
   }
 })
