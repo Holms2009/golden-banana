@@ -1,14 +1,16 @@
 .PlayersList {
   margin          : 0;
   padding         : 20px 30px 20px 50px;
-  width           : 300px;
+  width           : 500px;
   list-style      : decimal;
   background-color: #3d2937;
   border          : 5px solid #714059;
   border-radius   : 30px;
+  box-shadow      : 0 0 40px -15px gold;
+  // animation       : flieing-window 8s linear infinite;
 
   &__player {
-    color: #fff3d6;
+    color    : #fff3d6;
     font-size: 20px;
 
     &:not(:last-of-type) {
@@ -26,5 +28,15 @@
     display    : inline-block;
     margin     : 0;
     white-space: nowrap;
+  }
+}
+
+@keyframes flieing-window {
+  0% {
+    transform: rotate(0deg) translate3d(3px, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translate3d(3px, 0, 0) rotate(-360deg);
   }
 }

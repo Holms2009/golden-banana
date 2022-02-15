@@ -1,10 +1,13 @@
 .PageHeader {
+  box-sizing      : border-box;
   padding         : 5px 50px;
   display         : flex;
   justify-content : space-between;
   align-items     : center;
   background-color: #3d2937;
   border-bottom   : 1px solid #714059;
+  position        : relative;
+  z-index         : 100;
 
   &__logos {
     display: flex;
@@ -23,6 +26,17 @@
     &:hover {
       filter: drop-shadow(0 0 10px gold);
     }
+  }
+
+  &__logo-text {
+    position       : absolute;
+    width          : 450px;
+    height         : 100px;
+    background     : url('../../assets/images/logo-text.svg') no-repeat 50% 50%;
+    background-size: cover;
+    top            : 0px;
+    left           : 50%;
+    transform      : translateX(-50%);
   }
 
   @media screen and (max-width: 768px) {

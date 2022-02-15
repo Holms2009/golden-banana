@@ -34,6 +34,7 @@ const PageHeader = () => {
         <Logo />
       </div>
       {(windowWidth > 768) ? <NavMenu menuItems={menuItems} direction='horizontal' /> : <MobileMenu />}
+      <div className={b('logo-text')}></div>
     </div>
   )
 }
