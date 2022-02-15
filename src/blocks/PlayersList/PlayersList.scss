@@ -1,0 +1,30 @@
+.PlayersList {
+  margin          : 0;
+  padding         : 20px 30px 20px 50px;
+  width           : 300px;
+  list-style      : decimal;
+  background-color: #3d2937;
+  border          : 5px solid #714059;
+  border-radius   : 30px;
+
+  &__player {
+    color: #fff3d6;
+    font-size: 20px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 7px;
+    }
+
+    &-wrapper {
+      display        : flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__name,
+  &__contributions {
+    display    : inline-block;
+    margin     : 0;
+    white-space: nowrap;
+  }
+}

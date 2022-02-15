@@ -12,7 +12,7 @@ function sortPlayersByContributions(players: WeekPlayer[], direction: string) {
   players.sort((a, b) => direction === 'gtl' ? b.contribution - a.contribution : a.contribution - b.contribution);
 }
 
-function selectPlayersByWeek(players: Player[], week: number): WeekPlayer[] {
+function selectPlayersByWeek(players: Player[], week: number, overallContribution = false): WeekPlayer[] {
   let result: WeekPlayer[] = [];
 
   players.forEach(player => {
@@ -25,7 +25,7 @@ function selectPlayersByWeek(players: Player[], week: number): WeekPlayer[] {
 
     const processed: WeekPlayer = {
       nick: player.nick,
-      contribution: thisWeekContribution?.contribution - lastWeekContribution?.contribution,
+      contribution: overallContribution ?  thisWeekContribution?.contribution : thisWeekContribution?.contribution - lastWeekContribution?.contribution,
       id: player.id
     }
 
