@@ -20,7 +20,7 @@ const MainView = () => {
     <div className={b()}>
       {showAddPlayer ? <AddPlayerForm handleClose={toggleAddPlayer} /> : null}
       <div className={b('players-list')}>
-        <h2 className={b('title')}>Наши игрочки</h2>
+        <h2 className={b('title')}>Наши игроки</h2>
         <PlayersList />
       </div>
       <img className={b('temp-image')} src={bananaMinion} alt="Банановый миньон" />
