@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/golden-banana/static/css/main.68921cdd.css",
-    "main.js": "/golden-banana/static/js/main.c6267528.js",
+    "main.css": "/golden-banana/static/css/main.75120a56.css",
+    "main.js": "/golden-banana/static/js/main.bf36e623.js",
     "static/media/banana-minion.png": "/golden-banana/static/media/banana-minion.67f1c29259ef67cdeb73.png",
+    "static/media/logo-text.svg": "/golden-banana/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
     "static/media/ShopTitans_Logo_RGB.png": "/golden-banana/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
     "static/media/wallace.png": "/golden-banana/static/media/wallace.013fffa8ad3a087586ae.png",
     "static/media/cursecasual.otf": "/golden-banana/static/media/cursecasual.d773029de52f194921d6.otf",
+    "static/media/one-banana.png": "/golden-banana/static/media/one-banana.954fcf5a45f84fc6fc36.png",
     "static/media/goals.png": "/golden-banana/static/media/goals.cc161ea2d07e39b82c14.png",
-    "static/media/logo.svg": "/golden-banana/static/media/logo.0188f92be997ee7d8b493a9004df2151.svg",
+    "static/media/bugle3.png": "/golden-banana/static/media/bugle3.b27d499674c2884a31ee.png",
     "static/media/close.svg": "/golden-banana/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/golden-banana/index.html",
-    "main.68921cdd.css.map": "/golden-banana/static/css/main.68921cdd.css.map",
-    "main.c6267528.js.map": "/golden-banana/static/js/main.c6267528.js.map"
+    "main.75120a56.css.map": "/golden-banana/static/css/main.75120a56.css.map",
+    "main.bf36e623.js.map": "/golden-banana/static/js/main.bf36e623.js.map"
   },
   "entrypoints": [
-    "static/css/main.68921cdd.css",
-    "static/js/main.c6267528.js"
+    "static/css/main.75120a56.css",
+    "static/js/main.bf36e623.js"
   ]
 }
