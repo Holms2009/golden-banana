@@ -1,0 +1,15 @@
+@function db($value, $vw: 1920) {
+  @return calc(100vw * ($value/$vw))
+};
+
+@function ds($value, $vw: 1024) {
+  @return calc(100vw * ($value/$vw))
+};
+
+@function t($value, $vw: 768) {
+  @return calc(100vw * ($value/$vw))
+};
+
+@function mb($value, $vw: 600) {
+  @return calc(100vw * ($value/$vw))
+};

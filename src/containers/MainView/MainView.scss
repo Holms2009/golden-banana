@@ -1,6 +1,9 @@
+@import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+
 .MainView {
   margin         : 0 auto;
-  padding        : calc(100vw * (800/1920)) 10vw;
+  padding        : db(800) 10vw 100px;
   display        : flex;
   justify-content: center;
   position       : relative;
@@ -25,8 +28,8 @@
 
   &__title {
     margin        : 0;
-    font-size     : 30px;
-    color         : #fff3d6;
+    font-size     : 35px;
+    color         : $textColor;
     letter-spacing: 2px;
   }
 
@@ -50,56 +53,56 @@
     z-index : 10;
 
     .MainView__title {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
   }
 
   &__banana {
-    width          : 300px;
-    height         : 360px;
+    width          : db(300);
+    height         : db(360);
     background     : url('../../assets/images/one-banana.png') no-repeat 50% 50%;
     background-size: cover;
     position       : absolute;
 
     &_one {
-      top      : -30px;
-      left     : -80px;
+      top      : db(-30);
+      left     : db(-80);
       transform: rotate(200deg);
     }
 
     &_two {
-      top      : 350px;
-      left     : -30px;
+      top      : db(350);
+      left     : db(-30);
       transform: rotate(225deg);
     }
 
     &_three {
-      top      : 240px;
-      left     : -60px;
+      top      : db(240);
+      left     : db(-60);
       transform: rotate(190deg);
     }
 
     &_four {
-      top      : -10px;
-      left     : -170px;
+      top      : db(-10);
+      left     : db(-170);
       transform: rotate(60deg);
     }
 
     &_five {
-      top      : 460px;
-      left     : -40px;
+      top      : db(460);
+      left     : db(-40);
       transform: rotate(45deg);
     }
 
     &_six {
-      top      : 350px;
-      left     : -150px;
+      top      : db(350);
+      left     : db(-150);
       transform: scale(-1, 1) rotate(50deg);
     }
 
     &_seven {
-      top      : 690px;
-      left     : -90px;
+      top      : db(690);
+      left     : db(-90);
       transform: rotate(225deg);
     }
   }
@@ -115,5 +118,44 @@
     top      : 60px;
     right    : 0;
     transform: scale(-1, 1);
+  }
+
+  @media screen and (max-width: 1366px) {
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding        : ds(500) 10vw 100px;
+    background-size: 45%;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding        : t(500) 10vw 100px;
+    background-size: 60%;
+
+    &__bananas-left {
+      display: none;
+    }
+
+    &__bananas-right {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    padding            : mb(580) 10vw 50px;
+    background-position: 50% 0;
+    background-size    : 100%;
+
+    &__title {
+      font-size: 25px;
+    }
+
+    &__title-icon {
+      width          : 35px;
+      height         : 35px;  
+    }
   }
 }

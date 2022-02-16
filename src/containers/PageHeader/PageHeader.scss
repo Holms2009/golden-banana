@@ -1,3 +1,5 @@
+@import '../../assets/styles/functions';
+
 .PageHeader {
   box-sizing      : border-box;
   padding         : 5px 50px;
@@ -30,8 +32,8 @@
 
   &__logo-text {
     position       : absolute;
-    width          : 450px;
-    height         : 100px;
+    width          : db(450);
+    height         : db(100);
     background     : url('../../assets/images/logo-text.svg') no-repeat 50% 50%;
     background-size: cover;
     top            : 0px;
@@ -39,7 +41,29 @@
     transform      : translateX(-50%);
   }
 
+  @media screen and (max-width: 1366px) {
+    &__logo-text {
+      top: 10px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
+    padding: 20px 20px;
+
+    &__logo-text {
+      width : t(450);
+      height: t(100);
+      top   : 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
     padding: 10px 20px;
+
+    &__logo-text {
+      width : mb(400);
+      height: mb(100);
+      top   : 10px;
+    }
   }
 }

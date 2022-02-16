@@ -31,7 +31,6 @@ const PageHeader = () => {
             <img className={b('game-logo')} src={gameLogo} alt="Shop Titans logo" />
           </a> :
           null}
-        <Logo />
       </div>
       {(windowWidth > 768) ? <NavMenu menuItems={menuItems} direction='horizontal' /> : <MobileMenu />}
       <div className={b('logo-text')}></div>
