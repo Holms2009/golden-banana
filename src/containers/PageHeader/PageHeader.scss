@@ -48,7 +48,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    padding: 20px 20px;
+    padding: 10px 20px;
 
     &__logo-text {
       width : t(450);
@@ -58,12 +58,21 @@
   }
 
   @media screen and (max-width: 600px) {
-    padding: 10px 20px;
+    padding: 7px 15px;
 
     &__logo-text {
       width : mb(400);
       height: mb(100);
       top   : 10px;
+    }
+
+    &__game-logo {
+      width     : 60px;
+      height    : 37px;
+  
+      &:hover {
+        filter: none;
+      }
     }
   }
 }

@@ -80,5 +80,9 @@
 
   @media screen and (max-width: 600px) {
     width: mb(350);
+
+    &__player {
+      font-size: 18px;
+    }
   }
 }

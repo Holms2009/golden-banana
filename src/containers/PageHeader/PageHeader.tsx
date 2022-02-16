@@ -26,11 +26,9 @@ const PageHeader = () => {
   return (
     <div className={b()}>
       <div className={b('logos')}>
-        {(windowWidth > 768) ?
-          <a className={b('logo-link')} href="https://playshoptitans.com/" target='_blank' rel="noreferrer">
-            <img className={b('game-logo')} src={gameLogo} alt="Shop Titans logo" />
-          </a> :
-          null}
+        <a className={b('logo-link')} href="https://playshoptitans.com/" target='_blank' rel="noreferrer">
+          <img className={b('game-logo')} src={gameLogo} alt="Shop Titans logo" />
+        </a>
       </div>
       {(windowWidth > 768) ? <NavMenu menuItems={menuItems} direction='horizontal' /> : <MobileMenu />}
       <div className={b('logo-text')}></div>
