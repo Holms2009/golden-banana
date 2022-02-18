@@ -8,8 +8,20 @@
 
   &__title {
     margin        : 0;
+    margin-bottom : 50px;
     font-size     : 45px;
     letter-spacing: 2px;
     color         : #fff3d6;
+  }
+
+  &__list {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+    flex-wrap      : wrap;
+
+    .BuildingCard {
+      margin-bottom: 60px;
+    }
   }
 }
