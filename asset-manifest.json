@@ -1,22 +1,33 @@
 {
   "files": {
-    "main.css": "/golden-banana/static/css/main.75120a56.css",
-    "main.js": "/golden-banana/static/js/main.bf36e623.js",
-    "static/media/banana-minion.png": "/golden-banana/static/media/banana-minion.67f1c29259ef67cdeb73.png",
-    "static/media/logo-text.svg": "/golden-banana/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
-    "static/media/ShopTitans_Logo_RGB.png": "/golden-banana/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
-    "static/media/wallace.png": "/golden-banana/static/media/wallace.013fffa8ad3a087586ae.png",
-    "static/media/cursecasual.otf": "/golden-banana/static/media/cursecasual.d773029de52f194921d6.otf",
-    "static/media/one-banana.png": "/golden-banana/static/media/one-banana.954fcf5a45f84fc6fc36.png",
-    "static/media/goals.png": "/golden-banana/static/media/goals.cc161ea2d07e39b82c14.png",
-    "static/media/bugle3.png": "/golden-banana/static/media/bugle3.b27d499674c2884a31ee.png",
-    "static/media/close.svg": "/golden-banana/static/media/close.29d2da4f14ce9885c3fe.svg",
-    "index.html": "/golden-banana/index.html",
-    "main.75120a56.css.map": "/golden-banana/static/css/main.75120a56.css.map",
-    "main.bf36e623.js.map": "/golden-banana/static/js/main.bf36e623.js.map"
+    "main.css": "/static/css/main.33086b9e.css",
+    "main.js": "/static/js/main.e77b6d03.js",
+    "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
+    "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
+    "static/media/ShopTitans_Logo_RGB.png": "/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
+    "static/media/wallace.png": "/static/media/wallace.013fffa8ad3a087586ae.png",
+    "static/media/cursecasual.otf": "/static/media/cursecasual.d773029de52f194921d6.otf",
+    "static/media/wizard.png": "/static/media/wizard.1d2393c151a8b24291b4.png",
+    "static/media/lab.png": "/static/media/lab.078732bfa5db8853ae58.png",
+    "static/media/jewelry.png": "/static/media/jewelry.5b00d506195cbda3d570.png",
+    "static/media/one-banana.png": "/static/media/one-banana.954fcf5a45f84fc6fc36.png",
+    "static/media/smithy.png": "/static/media/smithy.44292c3a6a5ea71948d2.png",
+    "static/media/apothecary.png": "/static/media/apothecary.d8edd73df092c259bd5c.png",
+    "static/media/temple.png": "/static/media/temple.1cc639171f1693cfcb7e.png",
+    "static/media/wood-work.png": "/static/media/wood-work.79e371fffdeca6d01184.png",
+    "static/media/master.png": "/static/media/master.cbdf15bd111a03223ce2.png",
+    "static/media/academy.png": "/static/media/academy.752aca08f371a9ef6e06.png",
+    "static/media/tailor.png": "/static/media/tailor.0b6e49cb768e0de66c0f.png",
+    "static/media/goals.png": "/static/media/goals.cc161ea2d07e39b82c14.png",
+    "static/media/bugle3.png": "/static/media/bugle3.b27d499674c2884a31ee.png",
+    "static/media/item-bg.webp": "/static/media/item-bg.1c3b50f5a5de04a6d0d2.webp",
+    "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
+    "index.html": "/index.html",
+    "main.33086b9e.css.map": "/static/css/main.33086b9e.css.map",
+    "main.e77b6d03.js.map": "/static/js/main.e77b6d03.js.map"
   },
   "entrypoints": [
-    "static/css/main.75120a56.css",
-    "static/js/main.bf36e623.js"
+    "static/css/main.33086b9e.css",
+    "static/js/main.e77b6d03.js"
   ]
 }
