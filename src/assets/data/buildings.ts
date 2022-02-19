@@ -9,7 +9,7 @@ import master from '../images/master.png';
 import lab from '../images/lab.png';
 import academy from '../images/academy.png';
 
-const buildingsData = [
+const buildingsData: Building[] = [
   {
     name: 'Кузница',
     level: 1,

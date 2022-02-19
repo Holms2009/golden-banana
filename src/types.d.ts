@@ -28,15 +28,17 @@ type WeekPlayer = {
   id: string;
 }
 
-type WeekData = {
-  weekNumber: number;
-  data: Player[];
-};
-
 type NewContribution = {
   id: string;
   nick: string;
   contributionsHistory: Contribution[];
+}
+
+type Building = {
+  name: string;
+  level: number;
+  description: string;
+  image: string;
 }
 
 type RootState = ReturnType<typeof store.getState>;

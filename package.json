@@ -2,7 +2,7 @@
   "name": "golden-banana",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Holms2009.github.io/golden-banana",
+  "homepage": "https://guild.golden-banana.ru",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.2",
