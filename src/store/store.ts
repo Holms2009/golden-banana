@@ -15,7 +15,7 @@ type initialStateType = {
 const initialState: initialStateType = {
   players: [],
   statusGetPlayers: null,
-  currentWeek: {current: 1, lastUpdate: null},
+  currentWeek: {current: 1, lastUpdate: ''},
   statusGetWeek: null,
   statusAddPlayer: null,
   statusUpdateContributions: null

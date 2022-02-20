@@ -28,9 +28,10 @@ const CreateContributionsForm = ({ handleClose }: Props) => {
     const form = evt.currentTarget;
     const data = new FormData(form);
     const newContributions: NewContribution[] = [];
+    const currentDate = new Date();
     const newWeek: Week = {
       current: week.current + 1,
-      lastUpdate: new Date()
+      lastUpdate: `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`
     }
 
     players.forEach(player => {

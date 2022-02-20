@@ -15,14 +15,15 @@ const b = block('ContributionsTable');
 
 type Props = {
   weekNumber: number;
+  date: string | null;
 }
 
-const ContributionsTable = ({ weekNumber }: Props) => {
+const ContributionsTable = ({ weekNumber, date }: Props) => {
   const [sortByContributions, setSortByContributions] = useState('gtl');
 
   const dataStatus = useAppSelector(getDataFetchStatus);
   const data = useAppSelector(selectPlayers);
-  
+
   const thisWeekPlayers: WeekPlayer[] = selectPlayersByWeek(data, weekNumber);
 
   if (sortByContributions) sortPlayersByContributions(thisWeekPlayers, sortByContributions)
@@ -40,6 +41,7 @@ const ContributionsTable = ({ weekNumber }: Props) => {
       <thead className={b('head')}>
         <tr className={b('head-row')}>
           <th className={b('head-cell')}>
+            <div className={b('date')}>{date}</div>
             <div className={b('head-cell-container')}>
               <img className={b('head-icon')} src={trophy} alt="Иконка кубка" />
               <span className={b('head-text')}>Место</span>
