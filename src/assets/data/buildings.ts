@@ -27,122 +27,146 @@ const buildingsData: Building[] = [
   {
     name: 'Кузница',
     level: 18,
-    image: smithy
+    image: smithy,
+    mark: false
   },
   {
     name: 'Швейная мастерская',
     level: 18,
-    image: tailor
+    image: tailor,
+    mark: false
   },
   {
     name: 'Плотницкая мастерская',
     level: 18,
-    image: woodWork
+    image: woodWork,
+    mark: false
   },
   {
     name: 'Аптека',
     level: 18,
-    image: apothecary
+    image: apothecary,
+    mark: false
   },
   {
     name: 'Башня чародея',
     level: 19,
-    image: wizard
+    image: wizard,
+    mark: false
   },
   {
     name: 'Ювелирная мастерская',
     level: 18,
-    image: jewelry
+    image: jewelry,
+    mark: false
   },
   {
     name: 'Храм',
     level: 18,
-    image: temple
+    image: temple,
+    mark: false
   },
   {
     name: 'Дом мастера',
     level: 18,
-    image: master
+    image: master,
+    mark: false
   },
   {
     name: 'Лаборатория',
     level: 18,
-    image: lab
+    image: lab,
+    mark: false
   },
   {
     name: 'Академия',
     level: 18,
-    image: academy
+    image: academy,
+    mark: false
   },
   {
     name: 'Железный рудник',
     level: 18,
-    image: ironMine
+    image: ironMine,
+    mark: false
   },
   {
     name: 'Лесной двор',
     level: 18,
-    image: lumberYard
+    image: lumberYard,
+    mark: false
   },
   {
     name: 'Дубильня',
     level: 18,
-    image: tannery
+    image: tannery,
+    mark: false
   },
   {
     name: 'Сад',
     level: 18,
-    image: garden
+    image: garden,
+    mark: false
   },
   {
     name: 'Плавильня',
     level: 18,
-    image: smelter
+    image: smelter,
+    mark: false
   },
   {
     name: 'Лесопилка',
     level: 18,
-    image: sawmill
+    image: sawmill,
+    mark: false
   },
   {
     name: 'Ткацкая фабрика',
     level: 18,
-    image: weaver
+    image: weaver,
+    mark: false
   },
   {
     name: 'Маслобойный персс',
     level: 18,
-    image: oilPress
+    image: oilPress,
+    mark: false
   },
   {
     name: 'Ювелирный склад',
     level: 18,
-    image: jewelStore
+    image: jewelStore,
+    mark: false
   },
   {
     name: 'Эфирный колодец',
     level: 18,
-    image: etherWell
+    image: etherWell,
+    mark: false
   },
   {
     name: 'Ратуша',
     level: 20,
-    image: townHall
+    image: townHall,
+    mark: false
   },
   {
     name: '"Изумруд"',
     level: 19,
-    image: emerald
+    image: emerald,
+    mark: false
   },
   {
     name: 'Тренировочный зал',
     level: 20,
-    image: trainingHall
+    image: trainingHall,
+    mark: false
   },
   {
     name: 'Таверна',
     level: 28,
-    image: naya
+    image: naya,
+    mark: false
   },
 ]
 

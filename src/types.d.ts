@@ -38,6 +38,7 @@ type Building = {
   name: string;
   level: number;
   image: string;
+  mark: boolean;
 }
 
 type RootState = ReturnType<typeof store.getState>;
