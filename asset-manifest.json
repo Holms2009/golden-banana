@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.d2c5da39.css",
-    "main.js": "/static/js/main.873d5f9a.js",
+    "main.css": "/static/css/main.90365660.css",
+    "main.js": "/static/js/main.cff85247.js",
     "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
     "static/media/ShopTitans_Logo_RGB.png": "/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
+    "static/media/background_shoptitans_landscape.jpg": "/static/media/background_shoptitans_landscape.3034a9ebfa126a137775.jpg",
     "static/media/wallace.png": "/static/media/wallace.013fffa8ad3a087586ae.png",
     "static/media/naya.png": "/static/media/naya.096b8d2b9fb22122cb7c.png",
     "static/media/cursecasual.otf": "/static/media/cursecasual.d773029de52f194921d6.otf",
@@ -37,11 +38,11 @@
     "static/media/item-bg.webp": "/static/media/item-bg.1c3b50f5a5de04a6d0d2.webp",
     "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/index.html",
-    "main.d2c5da39.css.map": "/static/css/main.d2c5da39.css.map",
-    "main.873d5f9a.js.map": "/static/js/main.873d5f9a.js.map"
+    "main.90365660.css.map": "/static/css/main.90365660.css.map",
+    "main.cff85247.js.map": "/static/js/main.cff85247.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2c5da39.css",
-    "static/js/main.873d5f9a.js"
+    "static/css/main.90365660.css",
+    "static/js/main.cff85247.js"
   ]
 }
