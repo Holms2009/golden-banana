@@ -6,13 +6,15 @@ import './ContributionsView.scss';
 import ContributionsTable from "../../blocks/ContributionsTable/ContributionsTable";
 import CreateContributionsForm from "../../blocks/CreateContributionsForm/CreateContributionsForm";
 import { useAppSelector } from "../../store/hooks";
-import { selectCurrentWeek } from "../../store/getters";
+import { getGMState, selectCurrentWeek } from "../../store/getters";
 import { changeDate, formatDateString } from "../../utils/dateFormatting";
 
 const b = block('ContributionsView');
 
 const ContributionsView = () => {
   const [showContributionsForm, setShowContributionsForm] = useState(false);
+
+  const isGM = useAppSelector(getGMState);
   const week: Week = useAppSelector(selectCurrentWeek);
 
   const toggleAddContributionsForm = (evt: React.MouseEvent<HTMLElement>) => {
@@ -34,7 +36,7 @@ const ContributionsView = () => {
           null
       }
       {showContributionsForm ? <CreateContributionsForm handleClose={toggleAddContributionsForm} /> : null}
-      {/* <span className={b('add-contributions')} onClick={toggleAddContributionsForm}></span> */}
+      {isGM ? <span className={b('add-contributions')} onClick={toggleAddContributionsForm}></span> : null}
     </div>
   )
 }

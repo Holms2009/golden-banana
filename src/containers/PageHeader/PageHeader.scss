@@ -1,4 +1,5 @@
 @import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
 
 .PageHeader {
   box-sizing      : border-box;
@@ -41,6 +42,35 @@
     transform      : translateX(-50%);
   }
 
+  &__gm-state-toggle {
+    width           : 20px;
+    height          : 20px;
+    position        : fixed;
+    top             : 0px;
+    left            : 0px;
+    cursor          : pointer;
+  }
+
+  &__gm-form {
+    box-sizing      : border-box;
+    padding         : 20px;
+    background-color: $primaryBG;
+    border          : 4px solid $primaryBorder;
+    border-radius   : 15px;
+    position        : fixed;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+    display         : flex;
+    flex-direction  : column;
+  }
+
+  &__gm-password {
+    margin-bottom: 15px;
+    padding      : 5px 10px;
+    font-size    : 30px;
+  }
+
   @media screen and (max-width: 1366px) {
     &__logo-text {
       top: 10px;
@@ -67,9 +97,9 @@
     }
 
     &__game-logo {
-      width     : 60px;
-      height    : 37px;
-  
+      width : 60px;
+      height: 37px;
+
       &:hover {
         filter: none;
       }

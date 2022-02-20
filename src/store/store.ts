@@ -10,21 +10,27 @@ type initialStateType = {
   statusGetWeek: 'loading' | 'finished' | 'failed' | null;
   statusAddPlayer: 'loading' | 'finished' | 'failed' | null;
   statusUpdateContributions: 'loading' | 'finished' | 'failed' | null;
+  isGM: boolean;
 }
 
 const initialState: initialStateType = {
   players: [],
   statusGetPlayers: null,
-  currentWeek: {current: 1, lastUpdate: ''},
+  currentWeek: { current: 1, lastUpdate: '' },
   statusGetWeek: null,
   statusAddPlayer: null,
-  statusUpdateContributions: null
+  statusUpdateContributions: null,
+  isGM: sessionStorage.isGM ? true : false
 };
 
-const playersSlice = createSlice({
+const appSlice = createSlice({
   name: 'main-store',
   initialState,
-  reducers: {},
+  reducers: {
+    setGMState: (state, action) => {
+      state.isGM = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadPlayers.pending, (state) => {
@@ -35,7 +41,7 @@ const playersSlice = createSlice({
         if (action.payload) state.players = action.payload;
       })
       .addCase(loadPlayers.rejected, (state) => {
-        state.statusGetPlayers = "failed";     
+        state.statusGetPlayers = "failed";
       })
       .addCase(getWeek.pending, (state) => {
         state.statusGetWeek = "loading";
@@ -45,7 +51,7 @@ const playersSlice = createSlice({
         if (action.payload) state.currentWeek = action.payload;
       })
       .addCase(getWeek.rejected, (state) => {
-        state.statusGetWeek = "failed";     
+        state.statusGetWeek = "failed";
       })
       .addCase(addPlayerAndUpdate.pending, (state) => {
         state.statusAddPlayer = "loading";
@@ -54,7 +60,7 @@ const playersSlice = createSlice({
         state.statusAddPlayer = "finished";
       })
       .addCase(addPlayerAndUpdate.rejected, (state) => {
-        state.statusAddPlayer = "failed";     
+        state.statusAddPlayer = "failed";
       })
       .addCase(updatePlayerContributions.pending, (state) => {
         state.statusUpdateContributions = "loading";
@@ -63,12 +69,14 @@ const playersSlice = createSlice({
         state.statusUpdateContributions = "finished";
       })
       .addCase(updatePlayerContributions.rejected, (state) => {
-        state.statusUpdateContributions = "failed";     
+        state.statusUpdateContributions = "failed";
       })
   }
 })
 
+export const { setGMState } = appSlice.actions;
+
 export const store = configureStore({
-  reducer: playersSlice.reducer,
+  reducer: appSlice.reducer,
   middleware: [thunk, ...getDefaultMiddleware()]
 })

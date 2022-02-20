@@ -1,18 +1,23 @@
 import block from "bem-cn";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 import './PageHeader.scss';
 import gameLogo from '../../assets/images/ShopTitans_Logo_RGB.png';
 
-import Logo from "../../blocks/Logo/Logo";
 import NavMenu from "../../blocks/NavMenu/NavMenu";
 import MobileMenu from "../../blocks/MobileMenu/MobileMenu";
 import menuItems from '../../common/mainMenu';
+import { useAppDispatch } from "../../store/hooks";
+import { setGMState } from "../../store/store";
+import { getGMPassword } from "../../firebase/firebaseAPI";
 
 const b = block('PageHeader');
 
 const PageHeader = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showGMForm, setShowGMForm] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     function updateWindowSize() {
@@ -23,6 +28,25 @@ const PageHeader = () => {
     return () => { window.removeEventListener('resize', updateWindowSize) }
   });
 
+  async function handleSubmit(evt: FormEvent<HTMLFormElement>) {
+    const form = evt.currentTarget;
+    const data = new FormData(form);
+    evt.preventDefault();
+
+    await getGMPassword()
+      .then(res => {
+        if (res.exists() && data.get('password') === res.data().password) {
+          dispatch(setGMState(true));
+          form.reset();
+          setShowGMForm(false);
+          sessionStorage.isGM = true;
+        }
+      })
+      .catch((err: any) => {
+        console.log(err.message);
+      })
+  }
+
   return (
     <div className={b()}>
       <div className={b('logos')}>
@@ -30,7 +54,16 @@ const PageHeader = () => {
           <img className={b('game-logo')} src={gameLogo} alt="Shop Titans logo" />
         </a>
       </div>
+      {(windowWidth > 768) ? <span className={b('gm-state-toggle')} onClick={() => setShowGMForm(!showGMForm)}></span> : null}
       {(windowWidth > 768) ? <NavMenu menuItems={menuItems} direction='horizontal' /> : <MobileMenu />}
+      {
+        showGMForm ?
+          <form className={b('gm-form')} action="POST" onSubmit={handleSubmit}>
+            <input className={b('gm-password')} type="password" name='password' />
+            <input className={b('gm-submit')} type="submit" />
+          </form> :
+          null
+      }
       <div className={b('logo-text')}></div>
     </div>
   )

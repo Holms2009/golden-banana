@@ -20,10 +20,15 @@ const updateWeek = (data: Week) => {
   return updateDoc(doc(db, 'common', 'week'), data);
 }
 
+const getGMPassword = () => {
+  return getDoc(doc(db, 'common', 'gmAccess'));
+}
+
 export {
   fetchPlayers,
   fetchWeek,
   addPlayer,
   updateContribution,
-  updateWeek
+  updateWeek,
+  getGMPassword
 }
