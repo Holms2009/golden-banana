@@ -8,10 +8,9 @@ type Props = {
   name: string;
   imagePath: string;
   level: number;
-  description: string;
 }
 
-const BuildingCard = ({ name, imagePath, level, description }: Props) => {
+const BuildingCard = ({ name, imagePath, level }: Props) => {
   return (
     <div className={b()}>
       <h3 className={b('title')}>{name}</h3>
@@ -19,7 +18,6 @@ const BuildingCard = ({ name, imagePath, level, description }: Props) => {
         <img className={b('image')} src={imagePath} alt="Building icon" />
       </div>
       <p className={b('level')}>{'Уровень здания: ' + level}</p>
-      <p className={b('description')}>{description}</p>
     </div>
   )
 }

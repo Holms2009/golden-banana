@@ -37,7 +37,6 @@ type NewContribution = {
 type Building = {
   name: string;
   level: number;
-  description: string;
   image: string;
 }
 

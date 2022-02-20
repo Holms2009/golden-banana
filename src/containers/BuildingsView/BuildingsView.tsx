@@ -14,7 +14,7 @@ const BuildingsView = () => {
       <div className={b('list')}>
         {
           buildingsData.map(building => (
-            <BuildingCard name={building.name} level={building.level} description={building.description} imagePath={building.image} />
+            <BuildingCard name={building.name} level={building.level} imagePath={building.image} />
           ))
         }
       </div>
