@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.41cb9525.css",
-    "main.js": "/static/js/main.392b1927.js",
+    "main.js": "/static/js/main.c840432c.js",
     "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
     "static/media/ShopTitans_Logo_RGB.png": "/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
@@ -38,10 +38,10 @@
     "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/index.html",
     "main.41cb9525.css.map": "/static/css/main.41cb9525.css.map",
-    "main.392b1927.js.map": "/static/js/main.392b1927.js.map"
+    "main.c840432c.js.map": "/static/js/main.c840432c.js.map"
   },
   "entrypoints": [
     "static/css/main.41cb9525.css",
-    "static/js/main.392b1927.js"
+    "static/js/main.c840432c.js"
   ]
 }
