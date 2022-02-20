@@ -40,15 +40,16 @@
     top            : 0px;
     left           : 50%;
     transform      : translateX(-50%);
+    filter         : drop-shadow(0 0 10px $primaryBlue);
   }
 
   &__gm-state-toggle {
-    width           : 20px;
-    height          : 20px;
-    position        : fixed;
-    top             : 0px;
-    left            : 0px;
-    cursor          : pointer;
+    width   : 20px;
+    height  : 20px;
+    position: fixed;
+    top     : 0px;
+    left    : 0px;
+    cursor  : pointer;
   }
 
   &__gm-form {

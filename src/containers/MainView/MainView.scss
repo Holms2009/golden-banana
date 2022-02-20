@@ -63,6 +63,7 @@
     background     : url('../../assets/images/one-banana.png') no-repeat 50% 50%;
     background-size: cover;
     position       : absolute;
+    filter         : drop-shadow(0 0 15px $primaryBlue);
 
     &_one {
       top      : db(-30);
