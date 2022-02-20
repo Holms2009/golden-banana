@@ -28,12 +28,12 @@ const PageHeader = () => {
     return () => { window.removeEventListener('resize', updateWindowSize) }
   });
 
-  async function handleSubmit(evt: FormEvent<HTMLFormElement>) {
+  function handleSubmit(evt: FormEvent<HTMLFormElement>) {
     const form = evt.currentTarget;
     const data = new FormData(form);
     evt.preventDefault();
 
-    await getGMPassword()
+    getGMPassword()
       .then(res => {
         if (res.exists() && data.get('password') === res.data().password) {
           dispatch(setGMState(true));
