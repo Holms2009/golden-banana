@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.61ee4071.css",
+    "main.css": "/static/css/main.e768c21f.css",
     "main.js": "/static/js/main.cff85247.js",
     "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
@@ -38,11 +38,11 @@
     "static/media/item-bg.webp": "/static/media/item-bg.1c3b50f5a5de04a6d0d2.webp",
     "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/index.html",
-    "main.61ee4071.css.map": "/static/css/main.61ee4071.css.map",
+    "main.e768c21f.css.map": "/static/css/main.e768c21f.css.map",
     "main.cff85247.js.map": "/static/js/main.cff85247.js.map"
   },
   "entrypoints": [
-    "static/css/main.61ee4071.css",
+    "static/css/main.e768c21f.css",
     "static/js/main.cff85247.js"
   ]
 }
