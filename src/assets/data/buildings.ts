@@ -21,122 +21,128 @@ import etherWell from '../images/ether-well.png';
 import townHall from '../images/town-hall.png';
 import emerald from '../images/emerald.png';
 import trainingHall from '../images/training-hall.png';
+import naya from '../images/naya.png';
 
 const buildingsData: Building[] = [
   {
     name: 'Кузница',
-    level: 1,
+    level: 18,
     image: smithy
   },
   {
     name: 'Швейная мастерская',
-    level: 1,
+    level: 18,
     image: tailor
   },
   {
     name: 'Плотницкая мастерская',
-    level: 1,
+    level: 18,
     image: woodWork
   },
   {
     name: 'Аптека',
-    level: 1,
+    level: 18,
     image: apothecary
   },
   {
     name: 'Башня чародея',
-    level: 1,
+    level: 19,
     image: wizard
   },
   {
     name: 'Ювелирная мастерская',
-    level: 1,
+    level: 18,
     image: jewelry
   },
   {
     name: 'Храм',
-    level: 1,
+    level: 18,
     image: temple
   },
   {
     name: 'Дом мастера',
-    level: 1,
+    level: 18,
     image: master
   },
   {
     name: 'Лаборатория',
-    level: 1,
+    level: 18,
     image: lab
   },
   {
     name: 'Академия',
-    level: 1,
+    level: 18,
     image: academy
   },
   {
     name: 'Железный рудник',
-    level: 1,
+    level: 18,
     image: ironMine
   },
   {
     name: 'Лесной двор',
-    level: 1,
+    level: 18,
     image: lumberYard
   },
   {
     name: 'Дубильня',
-    level: 1,
+    level: 18,
     image: tannery
   },
   {
     name: 'Сад',
-    level: 1,
+    level: 18,
     image: garden
   },
   {
     name: 'Плавильня',
-    level: 1,
+    level: 18,
     image: smelter
   },
   {
     name: 'Лесопилка',
-    level: 1,
+    level: 18,
     image: sawmill
   },
   {
     name: 'Ткацкая фабрика',
-    level: 1,
+    level: 18,
     image: weaver
   },
   {
     name: 'Маслобойный персс',
-    level: 1,
+    level: 18,
     image: oilPress
   },
   {
     name: 'Ювелирный склад',
-    level: 1,
+    level: 18,
     image: jewelStore
   },
   {
     name: 'Эфирный колодец',
-    level: 1,
+    level: 18,
     image: etherWell
   },
   {
     name: 'Ратуша',
-    level: 1,
+    level: 20,
     image: townHall
   },
   {
     name: '"Изумруд"',
-    level: 1,
+    level: 19,
     image: emerald
   },
   {
     name: 'Тренировочный зал',
-    level: 1,
+    level: 20,
     image: trainingHall
+  },
+  {
+    name: 'Таверна',
+    level: 28,
+    image: naya
   },
 ]
 
