@@ -1,33 +1,46 @@
 {
   "files": {
-    "main.css": "/static/css/main.33086b9e.css",
-    "main.js": "/static/js/main.e77b6d03.js",
+    "main.css": "/static/css/main.8e5977c3.css",
+    "main.js": "/static/js/main.206b67eb.js",
     "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
     "static/media/ShopTitans_Logo_RGB.png": "/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
     "static/media/wallace.png": "/static/media/wallace.013fffa8ad3a087586ae.png",
     "static/media/cursecasual.otf": "/static/media/cursecasual.d773029de52f194921d6.otf",
     "static/media/wizard.png": "/static/media/wizard.1d2393c151a8b24291b4.png",
+    "static/media/town-hall.png": "/static/media/town-hall.2ffcad187e4c226a035e.png",
     "static/media/lab.png": "/static/media/lab.078732bfa5db8853ae58.png",
     "static/media/jewelry.png": "/static/media/jewelry.5b00d506195cbda3d570.png",
     "static/media/one-banana.png": "/static/media/one-banana.954fcf5a45f84fc6fc36.png",
     "static/media/smithy.png": "/static/media/smithy.44292c3a6a5ea71948d2.png",
     "static/media/apothecary.png": "/static/media/apothecary.d8edd73df092c259bd5c.png",
+    "static/media/jewelStore.png": "/static/media/jewelStore.79d77b837666dc12dabc.png",
+    "static/media/training-hall.png": "/static/media/training-hall.d7b78bcddd707497eb3c.png",
+    "static/media/iron-mine.png": "/static/media/iron-mine.dd631694476167dfcd4f.png",
+    "static/media/ether-well.png": "/static/media/ether-well.5f987b6e2fba25776147.png",
+    "static/media/garden.png": "/static/media/garden.ebb0a88beb421bda49f2.png",
     "static/media/temple.png": "/static/media/temple.1cc639171f1693cfcb7e.png",
+    "static/media/smelter.png": "/static/media/smelter.1c50e97352e6059fce65.png",
+    "static/media/sawmill.png": "/static/media/sawmill.6b66ffbd5d799cc63625.png",
     "static/media/wood-work.png": "/static/media/wood-work.79e371fffdeca6d01184.png",
+    "static/media/emerald.png": "/static/media/emerald.834db85f224ced65ca99.png",
     "static/media/master.png": "/static/media/master.cbdf15bd111a03223ce2.png",
     "static/media/academy.png": "/static/media/academy.752aca08f371a9ef6e06.png",
+    "static/media/oil-press.png": "/static/media/oil-press.c2c2dc9f924cbf5214aa.png",
+    "static/media/tannery.png": "/static/media/tannery.3eae034b1069e0ba7480.png",
     "static/media/tailor.png": "/static/media/tailor.0b6e49cb768e0de66c0f.png",
     "static/media/goals.png": "/static/media/goals.cc161ea2d07e39b82c14.png",
+    "static/media/lumber-yard.png": "/static/media/lumber-yard.3afd696d195bd2cf860a.png",
     "static/media/bugle3.png": "/static/media/bugle3.b27d499674c2884a31ee.png",
+    "static/media/weaver.png": "/static/media/weaver.3fd838aca8e95cf72fbd.png",
     "static/media/item-bg.webp": "/static/media/item-bg.1c3b50f5a5de04a6d0d2.webp",
     "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/index.html",
-    "main.33086b9e.css.map": "/static/css/main.33086b9e.css.map",
-    "main.e77b6d03.js.map": "/static/js/main.e77b6d03.js.map"
+    "main.8e5977c3.css.map": "/static/css/main.8e5977c3.css.map",
+    "main.206b67eb.js.map": "/static/js/main.206b67eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.33086b9e.css",
-    "static/js/main.e77b6d03.js"
+    "static/css/main.8e5977c3.css",
+    "static/js/main.206b67eb.js"
   ]
 }
