@@ -17,6 +17,7 @@
   justify-content: space-between;
   align-items    : flex-end;
   filter         : drop-shadow(0 0 5px gold);
+  animation      : scale-in 0.3s ease;
 
   &__image-container {
     box-sizing     : border-box;
@@ -151,5 +152,15 @@
       font-size   : 20px;
       padding-left: 73px;
     }
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
