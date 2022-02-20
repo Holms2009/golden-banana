@@ -22,6 +22,29 @@
 
     .BuildingCard {
       margin-bottom: 60px;
+      width        : 390px;
+
+      @media screen and (max-width: 1366px) {
+        width: 280px;
+      }
+
+      @media screen and (max-width: 768px) {
+        width        : 100%;
+        margin-bottom: 70px;
+      }
+
+      @media screen and (max-width: 600px) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    max-width: 80vw;
+
+    &__title {
+      margin-bottom : 35px;
+      font-size     : 35px;
     }
   }
 }

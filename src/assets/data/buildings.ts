@@ -114,12 +114,12 @@ const buildingsData: Building[] = [
     image: oilPress
   },
   {
-    name: 'Jewel storehouse',
+    name: 'Ювелирный склад',
     level: 1,
     image: jewelStore
   },
   {
-    name: 'Ether well',
+    name: 'Эфирный колодец',
     level: 1,
     image: etherWell
   },
