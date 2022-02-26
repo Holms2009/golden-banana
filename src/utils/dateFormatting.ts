@@ -1,9 +1,11 @@
 function formatDateString(date: string): string {
-  return new Date(Date.parse(date)).toLocaleDateString('ru');
+  const parts = date.split('-');
+  return new Date(parts[0] + '/' + parts[1] + '/' + parts[2]).toLocaleDateString('ru');
 }
 
 function changeDate(date: string, multiplier: number): string {
-  const result = new Date(Date.parse(date));
+  const parts = date.split('-');
+  const result = new Date(parts[0] + '/' + parts[1] + '/' + parts[2]);
 
   result.setDate(result.getDate() - multiplier * 7);
 
