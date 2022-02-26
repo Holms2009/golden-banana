@@ -6,6 +6,7 @@ import gameLogo from '../../assets/images/ShopTitans_Logo_RGB.png';
 
 import NavMenu from "../../blocks/NavMenu/NavMenu";
 import MobileMenu from "../../blocks/MobileMenu/MobileMenu";
+import YellowButton from "../../blocks/YellowButton/YellowButton";
 import menuItems from '../../common/mainMenu';
 import { useAppDispatch } from "../../store/hooks";
 import { setGMState } from "../../store/store";
@@ -60,7 +61,7 @@ const PageHeader = () => {
         showGMForm ?
           <form className={b('gm-form')} action="POST" onSubmit={handleSubmit}>
             <input className={b('gm-password')} type="password" name='password' />
-            <input className={b('gm-submit')} type="submit" />
+            <YellowButton text="Подтвердить" type="submit"/>
           </form> :
           null
       }

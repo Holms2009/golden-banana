@@ -1,75 +1,84 @@
 import block from "bem-cn";
+import { FormEvent, useState } from "react";
 
 import './CreateContributionsForm.scss';
 
+import YellowButton from "../YellowButton/YellowButton";
 import { selectCurrentWeek, selectPlayers } from "../../store/getters";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { selectActivePlayers } from "../../utils/playersSort";
-import { FormEvent, MouseEventHandler } from "react";
 import { getWeek, loadPlayers, updatePlayerContributions, updateWeekAction } from "../../store/asyncActions";
 
 
 const b = block('CreateContributionsForm');
 
 type Props = {
-  handleClose?: MouseEventHandler;
+  handleClose?: () => void;
 }
 
 const CreateContributionsForm = ({ handleClose }: Props) => {
-  const week: Week = useAppSelector(selectCurrentWeek);
-  const dispatch = useAppDispatch();
-  let players: Player[] = useAppSelector(selectPlayers);
+  const initialState: NewContribution[] = [];
 
-  players = selectActivePlayers(players);
+  const [currentStep, setCurrentStep] = useState(10);
+  const [data, setData] = useState(initialState);
+
+  const dispatch = useAppDispatch();
+  const players: Player[] = selectActivePlayers(useAppSelector(selectPlayers));
+  const week: Week = useAppSelector(selectCurrentWeek);
+
+  const currentDate = new Date();
+      const newWeek: Week = {
+        current: week.current + 1,
+        lastUpdate: `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`
+  }  
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
     const form = evt.currentTarget;
-    const data = new FormData(form);
-    const newContributions: NewContribution[] = [];
-    const currentDate = new Date();
-    const newWeek: Week = {
-      current: week.current + 1,
-      lastUpdate: `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`
-    }
+    const formData = new FormData(form);
 
-    players.forEach(player => {
+    if (currentStep < players.length) {
       const processed: NewContribution = {
-        id: player.id,
-        nick: player.nick,
-        contributionsHistory: player.contributionsHistory.concat({ weekNumber: newWeek.current, contribution: Number(data.get(player.nick)) })
+        id: players[currentStep].id,
+        nick: players[currentStep].nick,
+        contributionsHistory: players[currentStep].contributionsHistory.concat({ weekNumber: newWeek.current, contribution: Number(formData.get(players[currentStep].nick)) })
       }
 
-      console.log(processed);
-      
+      setData(data.concat(processed));
+      setCurrentStep(currentStep + 1);
+      form.reset();
+    } else {
 
-      newContributions.push(processed);
-    })
+      data.forEach(item => {
+        dispatch(updatePlayerContributions(item));
+      })
 
-    newContributions.forEach(item => {
-      dispatch(updatePlayerContributions(item));
-    })
+      dispatch(updateWeekAction(newWeek));
+      dispatch(getWeek());
+      dispatch(loadPlayers());
+      form.reset();
 
-    dispatch(updateWeekAction(newWeek));
-    dispatch(getWeek());
-    dispatch(loadPlayers());
-    form.reset();
+      handleClose && handleClose();
+    }
   }
-
 
   return (
     <div className={b()} onClick={handleClose}>
       <form className={b('form')} action="POST" onSubmit={handleSubmit}>
-        {
-          players.map(player => (
-            <label className={b('label')} key={player.id}>
+        {currentStep < players.length ?
+          <label className={b('label')}>
+            {players[currentStep].nick + ':'}
+            <input className={b('input')} type="number" name={players[currentStep].nick} required />
+          </label> :
+          data.map((player) => (
+            <div className={b('label')} key={player.id}>
               {player.nick + ':'}
-              <input className={b('input')} type="number" name={player.nick} required/>
-            </label>
+              <span className={b('input')}>{player.contributionsHistory[player.contributionsHistory.length - 1].contribution}</span>
+            </div>
           ))
         }
-        <input className={b('submit')} type="submit" />
+        <YellowButton text={currentStep < players.length ? "Следующий игрок" : "Подтвердить"} type="submit" />
         <span className={b('close')} onClick={handleClose}></span>
       </form>
     </div>

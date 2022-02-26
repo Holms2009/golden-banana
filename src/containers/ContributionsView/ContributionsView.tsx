@@ -17,8 +17,8 @@ const ContributionsView = () => {
   const isGM = useAppSelector(getGMState);
   const week: Week = useAppSelector(selectCurrentWeek);
 
-  const toggleAddContributionsForm = (evt: React.MouseEvent<HTMLElement>) => {
-    if (evt.target !== evt.currentTarget) return;
+  const toggleAddContributionsForm = (evt?: React.MouseEvent<HTMLElement>) => {
+    if (evt && evt.target !== evt.currentTarget) return;
 
     setShowContributionsForm(!showContributionsForm);
   }
@@ -30,7 +30,7 @@ const ContributionsView = () => {
       <h2 className={b('title')}>Вклады за предыдущие недели</h2>
       {
         week.current > 2 ?
-          Array(week.current - 2).fill(1).map((oldWeek, index) => (
+          Array(week.current - 2).fill(1).map((_, index) => (
             <ContributionsTable weekNumber={week.current - (index + 1)} date={changeDate(week.lastUpdate, index + 1)} key={index} />
           )) :
           null

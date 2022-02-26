@@ -12,8 +12,8 @@
 
   &__form {
     box-sizing      : border-box;
-    padding         : 50px 60px;
-    width           : 450px;
+    padding         : 50px 50px 30px;
+    width           : 600px;
     position        : relative;
     font-size       : 20px;
     color           : #fff3d6;
@@ -29,18 +29,21 @@
     width          : 100%;
     display        : flex;
     justify-content: space-between;
+    align-items    : center;
+    font-size      : 40px;
 
-    &:not(:last-of-type) {
+    &:not(:last-child) {
       margin-bottom: 7px;
     }
   }
 
   &__input {
-    width           : 150px;
+    width           : 200px;
     padding         : 5px;
     background-color: #271a23;
     border          : 2px solid #714059;
     border-radius   : 5px;
+    font-size       : 30px;
     color           : #fff3d6;
 
     &::-webkit-outer-spin-button,
@@ -64,5 +67,10 @@
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  .YellowButton {
+    margin-top: 40px;
+    align-self: center;
   }
 }
