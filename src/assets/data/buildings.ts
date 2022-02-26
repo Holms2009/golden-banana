@@ -22,6 +22,9 @@ import townHall from '../images/town-hall.png';
 import emerald from '../images/emerald.png';
 import trainingHall from '../images/training-hall.png';
 import naya from '../images/naya.png';
+import sunDragon from '../images/sundragon.png';
+import moonDragon from '../images/moondragon.png';
+import elven from '../images/elven.png';
 
 const buildingsData: Building[] = [
   {
@@ -166,6 +169,24 @@ const buildingsData: Building[] = [
     name: 'Таверна',
     level: 28,
     image: naya,
+    mark: false
+  },
+  {
+    name: 'Башня солнца',
+    level: 19,
+    image: sunDragon,
+    mark: false
+  },
+  {
+    name: 'Башня луны',
+    level: 18,
+    image: moonDragon,
+    mark: false
+  },
+  {
+    name: 'Палатка призывателя',
+    level: 18,
+    image: elven,
     mark: false
   },
 ]
