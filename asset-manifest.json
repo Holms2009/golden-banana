@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e768c21f.css",
-    "main.js": "/static/js/main.cff85247.js",
+    "main.css": "/static/css/main.d13c324d.css",
+    "main.js": "/static/js/main.c58c2a21.js",
     "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
     "static/media/ShopTitans_Logo_RGB.png": "/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
@@ -15,9 +15,12 @@
     "static/media/jewelry.png": "/static/media/jewelry.5b00d506195cbda3d570.png",
     "static/media/one-banana.png": "/static/media/one-banana.954fcf5a45f84fc6fc36.png",
     "static/media/smithy.png": "/static/media/smithy.44292c3a6a5ea71948d2.png",
+    "static/media/sundragon.png": "/static/media/sundragon.8405d1906907f7e70a56.png",
     "static/media/apothecary.png": "/static/media/apothecary.d8edd73df092c259bd5c.png",
+    "static/media/moondragon.png": "/static/media/moondragon.0ce501f0acacf15b9b35.png",
     "static/media/jewelStore.png": "/static/media/jewelStore.79d77b837666dc12dabc.png",
     "static/media/training-hall.png": "/static/media/training-hall.d7b78bcddd707497eb3c.png",
+    "static/media/elven.png": "/static/media/elven.c38828580ec2d2ee37af.png",
     "static/media/iron-mine.png": "/static/media/iron-mine.dd631694476167dfcd4f.png",
     "static/media/ether-well.png": "/static/media/ether-well.5f987b6e2fba25776147.png",
     "static/media/garden.png": "/static/media/garden.ebb0a88beb421bda49f2.png",
@@ -38,11 +41,11 @@
     "static/media/item-bg.webp": "/static/media/item-bg.1c3b50f5a5de04a6d0d2.webp",
     "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/index.html",
-    "main.e768c21f.css.map": "/static/css/main.e768c21f.css.map",
-    "main.cff85247.js.map": "/static/js/main.cff85247.js.map"
+    "main.d13c324d.css.map": "/static/css/main.d13c324d.css.map",
+    "main.c58c2a21.js.map": "/static/js/main.c58c2a21.js.map"
   },
   "entrypoints": [
-    "static/css/main.e768c21f.css",
-    "static/js/main.cff85247.js"
+    "static/css/main.d13c324d.css",
+    "static/js/main.c58c2a21.js"
   ]
 }
