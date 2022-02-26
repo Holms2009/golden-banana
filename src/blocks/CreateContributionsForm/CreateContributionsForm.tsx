@@ -19,7 +19,7 @@ type Props = {
 const CreateContributionsForm = ({ handleClose }: Props) => {
   const initialState: NewContribution[] = [];
 
-  const [currentStep, setCurrentStep] = useState(10);
+  const [step, setStep] = useState(0);
   const [data, setData] = useState(initialState);
 
   const dispatch = useAppDispatch();
@@ -38,15 +38,15 @@ const CreateContributionsForm = ({ handleClose }: Props) => {
     const form = evt.currentTarget;
     const formData = new FormData(form);
 
-    if (currentStep < players.length) {
+    if (step < players.length) {
       const processed: NewContribution = {
-        id: players[currentStep].id,
-        nick: players[currentStep].nick,
-        contributionsHistory: players[currentStep].contributionsHistory.concat({ weekNumber: newWeek.current, contribution: Number(formData.get(players[currentStep].nick)) })
+        id: players[step].id,
+        nick: players[step].nick,
+        contributionsHistory: players[step].contributionsHistory.concat({ weekNumber: newWeek.current, contribution: Number(formData.get(players[step].nick)) })
       }
 
       setData(data.concat(processed));
-      setCurrentStep(currentStep + 1);
+      setStep(step + 1);
       form.reset();
     } else {
 
@@ -66,10 +66,10 @@ const CreateContributionsForm = ({ handleClose }: Props) => {
   return (
     <div className={b()} onClick={handleClose}>
       <form className={b('form')} action="POST" onSubmit={handleSubmit}>
-        {currentStep < players.length ?
+        {step < players.length ?
           <label className={b('label')}>
-            {players[currentStep].nick + ':'}
-            <input className={b('input')} type="number" name={players[currentStep].nick} required />
+            {players[step].nick + ':'}
+            <input className={b('input')} type="number" name={players[step].nick} required />
           </label> :
           data.map((player) => (
             <div className={b('label')} key={player.id}>
@@ -78,7 +78,7 @@ const CreateContributionsForm = ({ handleClose }: Props) => {
             </div>
           ))
         }
-        <YellowButton text={currentStep < players.length ? "Следующий игрок" : "Подтвердить"} type="submit" />
+        <YellowButton text={step < players.length ? "Следующий игрок" : "Подтвердить"} type="submit" />
         <span className={b('close')} onClick={handleClose}></span>
       </form>
     </div>
