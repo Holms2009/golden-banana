@@ -10,50 +10,47 @@
   background     : url('../../assets/images/banana-minion.png') no-repeat 50% 50px;
   background-size: 37%;
 
-  &__temp-image {
-    width     : 40vw;
-    height    : 40vw;
-    object-fit: cover;
-
-    @media screen and (max-width: 600px) {
-      width : 90vw;
-      height: 90vw;
-    }
-  }
-
-  &__title-wrapper {
-    display        : flex;
-    justify-content: center;
-  }
-
-  &__title {
-    margin        : 0;
-    font-size     : 35px;
-    color         : $textColor;
-    letter-spacing: 2px;
-  }
-
-  &__title-icon {
-    margin-right   : 10px;
-    width          : 40px;
-    height         : 40px;
-    background     : url('../../assets/images/bugle3.png') no-repeat 50% 50%;
-    background-size: cover;
-
-    &:last-of-type {
-      margin-left: 7px;
-      transform  : scale(-1, 1);
-    }
-  }
-
   &__players-list {
     width   : fit-content;
     height  : fit-content;
     position: relative;
     z-index : 10;
 
+    .MainView__title-wrapper {
+      display        : flex;
+      justify-content: center;
+    }
+
     .MainView__title {
-      margin-bottom: 25px;
+      margin        : 0;
+      margin-bottom : 25px;
+      font-size     : 35px;
+      color         : $textColor;
+      letter-spacing: 2px;
+      user-select   : none;
+      cursor        : default;
+
+      &_for-gm {
+        transition: color 0.3s ease;
+        cursor    : pointer;
+
+        &:hover {
+          color: gold;
+        }
+      }
+    }
+
+    .MainView__title-icon {
+      margin-right   : 10px;
+      width          : 40px;
+      height         : 40px;
+      background     : url('../../assets/images/bugle3.png') no-repeat 50% 50%;
+      background-size: cover;
+
+      &:last-of-type {
+        margin-left: 7px;
+        transform  : scale(-1, 1);
+      }
     }
   }
 
@@ -155,8 +152,8 @@
     }
 
     &__title-icon {
-      width          : 35px;
-      height         : 35px;  
+      width : 35px;
+      height: 35px;
     }
   }
 }

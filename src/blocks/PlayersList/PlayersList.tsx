@@ -3,18 +3,29 @@ import block from "bem-cn";
 
 import { selectCurrentWeek, selectPlayers } from "../../store/getters";
 import { useAppSelector } from "../../store/hooks";
-import { selectPlayersByWeek, sortPlayersByContributions } from "../../utils/playersSort";
+import { selectPlayersByWeek, sortPlayersByContributions, selectExPlayers, selectActivePlayers } from "../../utils/playersSort";
 
 import "./PlayersList.scss";
 
 const b = block('PlayersList');
 
-const PlayersList = () => {
+type Props = {
+  view?: 'active' | 'ex'
+}
+
+const PlayersList = ({ view = 'active' }: Props) => {
   const players: Player[] = useAppSelector(selectPlayers);
   const week: Week = useAppSelector(selectCurrentWeek);
-  const selection = selectPlayersByWeek(players, week.current, true);
+  let selection;
 
-  sortPlayersByContributions(selection, 'gtl')
+  if (view === 'active') {
+    const active = selectActivePlayers(players);
+    selection = selectPlayersByWeek(active, week.current, true);
+  } else {
+    selection = selectExPlayers(players);
+  }
+
+  sortPlayersByContributions(selection, 'gtl');
 
   return (
     <ul className={b()}>

@@ -10,7 +10,6 @@
   border          : 5px solid $primaryBorder;
   border-radius   : 30px;
   box-shadow      : 0 0 40px -15px gold;
-  transition      : transform 0.5s ease;
 
   &__player {
     width    : 100%;
@@ -44,10 +43,6 @@
     display    : inline-block;
     margin     : 0;
     white-space: nowrap;
-  }
-
-  &:hover {
-    transform: scale(1.05) translateY(20px);
   }
 
   @media screen and (min-width: 1921px) {
