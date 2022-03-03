@@ -1,3 +1,4 @@
+import React from "react";
 import block from "bem-cn";
 import { FormEvent, useEffect, useState } from "react";
 
@@ -43,7 +44,7 @@ const PageHeader = () => {
           sessionStorage.isGM = true;
         }
       })
-      .catch((err: any) => {
+      .catch((err) => {
         console.log(err.message);
       })
   }
@@ -61,7 +62,7 @@ const PageHeader = () => {
         showGMForm ?
           <form className={b('gm-form')} action="POST" onSubmit={handleSubmit}>
             <input className={b('gm-password')} type="password" name='password' />
-            <YellowButton text="Подтвердить" type="submit"/>
+            <YellowButton text="Подтвердить" type="submit" />
           </form> :
           null
       }

@@ -1,10 +1,11 @@
 import block from "bem-cn";
-import { FormEvent } from "react";
+import React, { FormEvent } from "react";
 import { nanoid } from "nanoid";
 
 import './AddPlayerForm.scss';
 import { addPlayerAndUpdate, loadPlayers } from "../../store/asyncActions";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+
 import { selectCurrentWeek } from "../../store/getters";
 
 const b = block('AddPlayerForm');

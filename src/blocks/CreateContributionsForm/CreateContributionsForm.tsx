@@ -1,5 +1,5 @@
 import block from "bem-cn";
-import { FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 
 import './CreateContributionsForm.scss';
 

@@ -1,15 +1,17 @@
+import React, { useState } from "react";
 import block from "bem-cn";
-import { useAppSelector } from "../../store/hooks";
-import { selectPlayers, getDataFetchStatus } from "../../store/getters";
 import Skeleton from "react-loading-skeleton";
+
+import { selectPlayers, getDataFetchStatus } from "../../store/getters";
+import { useAppSelector } from "../../store/hooks";
+import { selectPlayersByWeek, sortPlayersByContributions } from "../../utils/playersSort";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import './ContributionsTable.scss';
 import trophy from '../../assets/images/bounty_trophy.png';
 import gold from '../../assets/images/gold.png';
 import character from '../../assets/images/wallace.png';
-import { selectPlayersByWeek, sortPlayersByContributions } from "../../utils/playersSort";
-import { useState } from "react";
+
 
 const b = block('ContributionsTable');
 

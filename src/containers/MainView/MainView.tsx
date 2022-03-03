@@ -1,3 +1,4 @@
+import React from "react";
 import block from "bem-cn";
 import { useState } from "react";
 

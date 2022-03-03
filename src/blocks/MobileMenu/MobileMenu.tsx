@@ -1,5 +1,5 @@
 import block from "bem-cn";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import './MobileMenu.scss';
 import gameLogo from '../../assets/images/ShopTitans_Logo_RGB.png';

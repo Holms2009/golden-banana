@@ -1,4 +1,6 @@
+import React from "react";
 import block from "bem-cn";
+
 import { selectCurrentWeek, selectPlayers } from "../../store/getters";
 import { useAppSelector } from "../../store/hooks";
 import { selectPlayersByWeek, sortPlayersByContributions } from "../../utils/playersSort";
