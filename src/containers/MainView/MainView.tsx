@@ -6,6 +6,7 @@ import './MainView.scss';
 
 import AddPlayerForm from "../../blocks/AddPlayerForm/AddPlayerForm";
 import PlayersList from "../../blocks/PlayersList/PlayersList";
+import Timer from "../../blocks/Timer/Timer";
 import { useAppSelector } from "../../store/hooks";
 import { getGMState } from "../../store/getters";
 
@@ -34,6 +35,7 @@ const MainView = () => {
   return (
     <div className={b()}>
       {showAddPlayer ? <AddPlayerForm handleClose={toggleAddPlayer} /> : null}
+      <Timer title="До дня рождения гильдии:" to={new Date(2022, 4, 26, 0, 0, 0)}/>
       <div className={b('players-list')}>
         <div className={b('title-wrapper')}>
           <span className={b('title-icon')}></span>

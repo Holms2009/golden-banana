@@ -3,11 +3,13 @@
 
 .MainView {
   margin         : 0 auto;
-  padding        : db(800) 10vw 100px;
+  padding        : db(700) 10vw 100px;
   display        : flex;
+  flex-direction : column;
+  align-items    : center;
   justify-content: center;
   position       : relative;
-  background     : url('../../assets/images/banana-minion.png') no-repeat 50% 50px;
+  background     : url('../../assets/images/banana-minion.png') no-repeat 50% 10px;
   background-size: 37%;
 
   &__players-list {
@@ -116,6 +118,10 @@
     top      : 60px;
     right    : 0;
     transform: scale(-1, 1);
+  }
+
+  .Timer {
+    margin-bottom: 60px;
   }
 
   @media screen and (max-width: 1366px) {
