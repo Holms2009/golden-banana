@@ -94,7 +94,7 @@ function formatDateText(text: string, value: number): string {
         result = ' секунд';
         break;
       case 3:
-        result = ' секуны';
+        result = ' секунды';
         break;
     }
   }
