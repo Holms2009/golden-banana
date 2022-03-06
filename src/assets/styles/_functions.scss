@@ -2,6 +2,10 @@
   @return calc(100vw * ($value/$vw))
 };
 
+@function d($value, $vw: 1366) {
+  @return calc(100vw * ($value/$vw))
+};
+
 @function ds($value, $vw: 1024) {
   @return calc(100vw * ($value/$vw))
 };

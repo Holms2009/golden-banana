@@ -125,6 +125,8 @@
   }
 
   @media screen and (max-width: 1366px) {
+    padding-top: d(480);
+
     &__title {
       font-size: 30px;
     }
@@ -160,6 +162,10 @@
     &__title-icon {
       width : 35px;
       height: 35px;
+    }
+
+    .Timer {
+      margin-bottom: 30px;
     }
   }
 }

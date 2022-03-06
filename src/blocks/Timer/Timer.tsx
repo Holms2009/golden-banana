@@ -17,6 +17,7 @@ const Timer = ({ to, from, title }: Props) => {
   const [timer, setTimer] = useState(timeCounter());
 
   function timeCounter() {
+    const windowWidth = window.innerWidth;
     const currentTime = new Date();
     let difference;
 
@@ -40,10 +41,12 @@ const Timer = ({ to, from, title }: Props) => {
         ${years + formatDateText('год', years)}
         ${months + formatDateText('месяц', months)}
         ${days + formatDateText('день', days)}
+      ` + ((windowWidth > 600) ? 
+      `
         ${hours < 10 ? '0' + hours : hours} ${formatDateText('час', hours)}
         ${minutes < 10 ? '0' + minutes : minutes} ${formatDateText('минута', minutes)}
         ${seconds < 10 ? '0' + seconds : seconds} ${formatDateText('секунда', seconds)} 
-      `;
+      ` : '');
     } else {
       const hours = currentTime.getHours();
       const minutes = currentTime.getMinutes();

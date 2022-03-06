@@ -17,4 +17,15 @@
     margin   : 0;
     font-size: 30px;
   }
+
+  @media screen and (max-width: 360px) {
+    &__title {
+      margin-bottom: 10px;
+      font-size    : 30px;
+    }
+  
+    &__timer {
+      font-size: 25px;
+    }
+  }
 }

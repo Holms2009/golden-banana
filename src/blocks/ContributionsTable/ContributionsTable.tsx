@@ -51,13 +51,13 @@ const ContributionsTable = ({ weekNumber, date }: Props) => {
           </th>
           <th className={b('head-cell')}>
             <div className={b('head-cell-container')}>
-              <img className={b('head-icon')} src={character} alt="Иконка кубка" />
-              <span className={b('head-text')}>Имя игрока</span>
+              <img className={b('head-icon')} src={character} alt="Иконка игрока" />
+              <span className={b('head-text')}>Игрок</span>
             </div>
           </th>
           <th className={b('head-cell')}>
             <div className={b('head-cell-container')} >
-              <img className={b('head-icon')} src={gold} alt="Иконка кубка" />
+              <img className={b('head-icon')} src={gold} alt="Иконка монеты" />
               <span className={b('head-text')} onClick={changeBCSort}>Вклад</span>
             </div>
           </th>
