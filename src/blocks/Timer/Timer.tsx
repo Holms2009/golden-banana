@@ -9,41 +9,56 @@ const b = block('Timer');
 
 type Props = {
   to?: Date,
+  from?: Date,
   title: string
 }
 
-const Timer = ({ to, title }: Props) => {
-  const [timer, setTimer] = useState('');
+const Timer = ({ to, from, title }: Props) => {
+  const [timer, setTimer] = useState(timeCounter());
 
   function timeCounter() {
     const currentTime = new Date();
+    let difference;
 
-    if (to) {
-      const month = (to.getMonth() || 11) - currentTime.getMonth();
-      const date = to.getDate() - currentTime.getDate();
-      const hours = (to.getHours() || 23) - currentTime.getHours();
-      const minutes = (to.getMinutes() || 59) - currentTime.getMinutes();
-      const seconds = (to.getSeconds() || 59) - currentTime.getSeconds();
+    if (to && !from) {
+      difference = to.getTime() - currentTime.getTime();
+    } else if (from && !to) {
+      difference = currentTime.getTime() - from.getTime();
+    } else if (to && from) {
+      difference = to.getTime() - from.getTime();
+    }
 
-      setTimer(`
-        ${month + formatDateText('месяц', month)}
-        ${date + formatDateText('день', date)}
+    if (difference) {
+      const years = Math.trunc(difference / 31536e6);
+      const months = Math.trunc(difference % 31536e6 / 2628e6);
+      const days = Math.trunc(difference % 2628e6 / 864e5);
+      const hours = Math.trunc((difference % 864e5) / 36e5)
+      const minutes = Math.trunc((difference % 36e5) / 6e4)
+      const seconds = Math.trunc((difference % 6e4) / 1000)
+
+      return `
+        ${years + formatDateText('год', years)}
+        ${months + formatDateText('месяц', months)}
+        ${days + formatDateText('день', days)}
         ${hours < 10 ? '0' + hours : hours} ${formatDateText('час', hours)}
         ${minutes < 10 ? '0' + minutes : minutes} ${formatDateText('минута', minutes)}
-        ${seconds < 10 ? '0' + seconds : seconds} ${formatDateText('секунда', seconds)}
-      `);
+        ${seconds < 10 ? '0' + seconds : seconds} ${formatDateText('секунда', seconds)} 
+      `;
     } else {
       const hours = currentTime.getHours();
       const minutes = currentTime.getMinutes();
       const seconds = currentTime.getSeconds();
 
-      setTimer(`${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`);
+      return `
+        ${hours < 10 ? '0' + hours : hours}:
+        ${minutes < 10 ? '0' + minutes : minutes}:
+        ${seconds < 10 ? '0' + seconds : seconds}
+      `;
     }
   }
 
   useEffect(() => {
-    const intervalID = setInterval(timeCounter, 1000);
-    timeCounter();
+    const intervalID = setInterval(() => setTimer(timeCounter()), 1000);
 
     return () => {
       clearInterval(intervalID);

@@ -35,7 +35,7 @@ const MainView = () => {
   return (
     <div className={b()}>
       {showAddPlayer ? <AddPlayerForm handleClose={toggleAddPlayer} /> : null}
-      <Timer title="До дня рождения гильдии:" to={new Date(2022, 4, 26, 0, 0, 0)}/>
+      <Timer title="Нашей гильдии:" from={new Date(2020, 4, 26, 0, 0, 0)}/>
       <div className={b('players-list')}>
         <div className={b('title-wrapper')}>
           <span className={b('title-icon')}></span>

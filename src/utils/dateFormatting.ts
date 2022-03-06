@@ -15,6 +15,20 @@ function changeDate(date: string, multiplier: number): string {
 function formatDateText(text: string, value: number): string {
   let result = '';
 
+  if (text === 'год') {
+    switch (defineWordEndingByNumber(value)) {
+      case 1:
+        result = ' год';
+        break;
+      case 2:
+        result = ' лет';
+        break;
+      case 3:
+        result = ' года';
+        break;
+    }
+  }
+
   if (text === 'месяц') {
     switch (defineWordEndingByNumber(value)) {
       case 1:
