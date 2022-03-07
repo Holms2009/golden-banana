@@ -1,11 +1,12 @@
 import React from "react";
 import block from "bem-cn";
 
+import "./PlayersList.scss";
+
 import { selectCurrentWeek, selectPlayers } from "../../store/getters";
 import { useAppSelector } from "../../store/hooks";
 import { selectPlayersByWeek, sortPlayersByContributions, selectExPlayers, selectActivePlayers } from "../../utils/playersSort";
 
-import "./PlayersList.scss";
 
 const b = block('PlayersList');
 

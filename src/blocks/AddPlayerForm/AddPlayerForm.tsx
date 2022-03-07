@@ -1,11 +1,12 @@
-import block from "bem-cn";
 import React, { FormEvent } from "react";
+import block from "bem-cn";
 import { nanoid } from "nanoid";
 
 import './AddPlayerForm.scss';
+
+import YellowButton from "../YellowButton/YellowButton";
 import { addPlayerAndUpdate, loadPlayers } from "../../store/asyncActions";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-
 import { selectCurrentWeek } from "../../store/getters";
 
 const b = block('AddPlayerForm');
@@ -14,7 +15,7 @@ type Props = {
   handleClose?: () => void;
 }
 
-const AddPlayerForm = ({handleClose}: Props) => {
+const AddPlayerForm = ({ handleClose }: Props) => {
   const dispatch = useAppDispatch();
   const week: Week = useAppSelector(selectCurrentWeek);
 
@@ -35,20 +36,24 @@ const AddPlayerForm = ({handleClose}: Props) => {
         }
       ],
       isInGuild: true
-    }  
+    }
 
     dispatch(addPlayerAndUpdate(newPlayer));
     dispatch(loadPlayers());
     form.reset();
+    handleClose && handleClose();
   }
 
   return (
     <form className={b()} action="POST" onSubmit={handleSubmit}>
       <h3 className={b('title')}>Добавление нового игрока</h3>
       <input className={b('input')} type="text" name="nick" placeholder="Введите ник игрока" required />
-      <input className={b('input')} type="text" name="rank" placeholder="Введите ранг игрока" required />
+      <select className={b('select')} name="rank" placeholder="Выберите ранг игрока" required >
+        <option value='officer'>Офицер</option>
+        <option value='common' selected>Обычный игрок</option>
+      </select>
       <input className={b('input')} type="number" name="contributions" placeholder="Введите вклад игрока" required />
-      <input className={b('input')} type="submit" name="submit" value="Добавить игрока" />
+      <YellowButton text="Добавить игрока" type="submit"/>
       <span className={b('close')} onClick={handleClose}></span>
     </form>
   )

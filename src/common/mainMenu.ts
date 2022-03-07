@@ -5,7 +5,8 @@ import houseIcon from '../assets/images/city.png';
 const mainMenu: MenuItem[] = [
   { text: 'Главная', image: guildBanner, link: '/' },
   { text: 'Вклады', image: goldPiggyBank, link: '/contributions' },
-  { text: 'Здания', image: houseIcon, link: '/buildings' }
+  { text: 'Здания', image: houseIcon, link: '/buildings' },
+  { text: 'Галерея', image: houseIcon, link: '/gallery' }
 ]
 
 export default mainMenu;
