@@ -38,6 +38,7 @@ const MainView = () => {
       <Timer title="Нашей гильдии:" from={new Date(2020, 4, 26, 0, 0, 0)}/>
       <div className={b('players-list')}>
         <div className={b('title-wrapper')}>
+          {isGM ? <span className={b('add-player-button')} title="Добавить игрока" onClick={toggleAddPlayer}></span> : null}
           <span className={b('title-icon')}></span>
           <h2 className={b('title', {'for-gm': isGM})} onClick={toggleListView}>{listView === 'active' ? 'Наши игроки' : 'Бывшие игроки'}</h2>
           <span className={b('title-icon')}></span>

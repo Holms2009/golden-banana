@@ -1,5 +1,7 @@
+@import '../../assets/styles/colors';
+
 .AddPlayerForm {
-  padding         : 40px 25px;
+  padding         : 40px 25px 25px;
   width           : 300px;
   display         : flex;
   flex-direction  : column;
@@ -10,18 +12,36 @@
   top             : 50%;
   left            : 50%;
   transform       : translate(-50%, -50%);
+  z-index         : 999;
 
   &__title {
-    margin       : 0;
-    margin-bottom: 25px;
-    font-size    : 28px;
-    color        : #fff3d6;
+    margin        : 0;
+    margin-bottom : 25px;
+    font-size     : 28px;
+    color         : #fff3d6;
+    letter-spacing: 1px;
   }
 
-  &__input {
-    &:not(:last-of-type) {
+  &__input, &__select {
+    padding: 5px 10px;
+    font-size: 25px;
+    color: $textColor;
+    background-color: $darkBG;
+    border: 2px solid $primaryBorder;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $primaryYellow;
+    }
+
+    &:not(:last-child) {
       margin-bottom: 20px;
     }
+  }
+
+  .YellowButton {
+    align-self: center;
   }
 
   &__close {
