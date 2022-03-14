@@ -31,6 +31,10 @@ const AddPlayerForm = ({ handleClose }: Props) => {
       id: nanoid(8),
       contributionsHistory: [
         {
+          weekNumber: week.current - 1,
+          contribution: 0
+        },
+        {
           weekNumber: week.current,
           contribution: Number(data.get('contributions-past'))
         }
