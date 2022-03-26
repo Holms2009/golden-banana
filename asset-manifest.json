@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0fb30a35.css",
-    "main.js": "/static/js/main.f1eebc6a.js",
+    "main.css": "/static/css/main.7f9e0870.css",
+    "main.js": "/static/js/main.c58994ee.js",
     "static/media/banana-minion.png": "/static/media/banana-minion.67f1c29259ef67cdeb73.png",
     "static/media/logo-text.svg": "/static/media/logo-text.d816b8b3abf3ffdf6a64.svg",
     "static/media/ShopTitans_Logo_RGB.png": "/static/media/ShopTitans_Logo_RGB.0b0c41902b9d1c6b4918.png",
@@ -39,14 +39,14 @@
     "static/media/bugle3.png": "/static/media/bugle3.b27d499674c2884a31ee.png",
     "static/media/weaver.png": "/static/media/weaver.3fd838aca8e95cf72fbd.png",
     "static/media/item-bg.webp": "/static/media/item-bg.1c3b50f5a5de04a6d0d2.webp",
-    "static/media/plus.svg": "/static/media/plus.a43955685cd6245cad89.svg",
+    "static/media/plus.svg": "/static/media/plus.c7c57378257168c219f3.svg",
     "static/media/close.svg": "/static/media/close.29d2da4f14ce9885c3fe.svg",
     "index.html": "/index.html",
-    "main.0fb30a35.css.map": "/static/css/main.0fb30a35.css.map",
-    "main.f1eebc6a.js.map": "/static/js/main.f1eebc6a.js.map"
+    "main.7f9e0870.css.map": "/static/css/main.7f9e0870.css.map",
+    "main.c58994ee.js.map": "/static/js/main.c58994ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.0fb30a35.css",
-    "static/js/main.f1eebc6a.js"
+    "static/css/main.7f9e0870.css",
+    "static/js/main.c58994ee.js"
   ]
 }
