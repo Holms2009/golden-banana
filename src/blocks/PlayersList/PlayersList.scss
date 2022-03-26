@@ -16,7 +16,6 @@
     color    : $textColor;
     font-size: 25px;
     position : relative;
-    z-index  : 2;
 
     &:not(:last-of-type) {
       margin-bottom: 12px;
@@ -72,6 +71,13 @@
     display    : inline-block;
     margin     : 0;
     white-space: nowrap;
+  }
+
+  .PopUpWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @media screen and (min-width: 1921px) {
