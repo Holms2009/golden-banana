@@ -1,6 +1,6 @@
 function formatDateString(date: string): string {
   const parts = date.split('-');
-  return new Date(parts[0] + '/' + (+parts[1] + 1) + '/' + parts[2]).toLocaleDateString('ru');
+  return new Date(parts[0] + '/' + parts[1] + '/' + parts[2]).toLocaleDateString('ru');
 }
 
 function changeDate(date: string, multiplier: number): string {

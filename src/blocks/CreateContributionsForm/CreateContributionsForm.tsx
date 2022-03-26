@@ -27,10 +27,10 @@ const CreateContributionsForm = ({ handleClose }: Props) => {
   const week: Week = useAppSelector(selectCurrentWeek);
 
   const currentDate = new Date();
-      const newWeek: Week = {
-        current: week.current + 1,
-        lastUpdate: `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`
-  }  
+  const newWeek: Week = {
+    current: week.current + 1,
+    lastUpdate: `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`
+  }
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();

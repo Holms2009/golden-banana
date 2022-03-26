@@ -36,7 +36,7 @@ const AddPlayerForm = ({ handleClose }: Props) => {
         },
         {
           weekNumber: week.current,
-          contribution: Number(data.get('contributions-past'))
+          contribution: Number(data.get('contributions'))
         }
       ],
       isInGuild: true
