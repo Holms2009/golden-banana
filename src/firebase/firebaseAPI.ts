@@ -16,6 +16,12 @@ const updateContribution = (data: NewContribution) => {
   });
 }
 
+const updatePlayerState = (id: string) => {
+  return updateDoc(doc(db, 'players', id), {
+    isInGuild: false
+  });
+}
+
 const updateWeek = (data: Week) => {
   return updateDoc(doc(db, 'common', 'week'), data);
 }
@@ -30,5 +36,6 @@ export {
   addPlayer,
   updateContribution,
   updateWeek,
-  getGMPassword
+  getGMPassword,
+  updatePlayerState
 }

@@ -35,7 +35,7 @@ function selectPlayersByWeek(players: Player[], week: number, overallContributio
   players.forEach(player => {
     const thisWeek = player.contributionsHistory.find(snap => snap.weekNumber === week);
     const lastWeek = player.contributionsHistory.find(snap => snap.weekNumber === week - 1);
-
+    
     if (!thisWeek || !lastWeek) return false;
 
     const processed: WeekPlayer = {

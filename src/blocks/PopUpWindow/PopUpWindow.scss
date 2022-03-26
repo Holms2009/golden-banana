@@ -1,6 +1,42 @@
+@import '../../assets/styles/colors';
+
 .PopUpWindow {
-  display       : flex;
-  flex-direction: column;
+  box-sizing: border-box;
+  padding         : 30px 40px;
+  display         : flex;
+  flex-direction  : column;
+  background-color: $primaryBG;
+  border: 5px solid $primaryBorder;
+  border-radius: 20px;
+  z-index: 999;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 45px;
+  }
+
+  &__message {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 25px;
+  }
+
+  &__close {
+    width: 35px;
+    height: 35px;
+    background: url('../../assets/images/close.svg') no-repeat 50% 50%;
+    background-size: cover;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 
   .YellowButton {
     align-self: center;
