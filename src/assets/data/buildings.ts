@@ -35,7 +35,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Швейная мастерская',
-    level: 17,
+    level: 18,
     image: tailor,
     mark: false
   },
@@ -89,7 +89,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Железный рудник',
-    level: 17,
+    level: 18,
     image: ironMine,
     mark: false
   },
@@ -107,7 +107,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Сад',
-    level: 17,
+    level: 18,
     image: garden,
     mark: false
   },
@@ -119,13 +119,13 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Лесопилка',
-    level: 17,
+    level: 18,
     image: sawmill,
     mark: false
   },
   {
     name: 'Ткацкая фабрика',
-    level: 17,
+    level: 18,
     image: weaver,
     mark: false
   },
@@ -137,13 +137,13 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Ювелирный склад',
-    level: 17,
+    level: 18,
     image: jewelStore,
     mark: false
   },
   {
     name: 'Эфирный колодец',
-    level: 17,
+    level: 18,
     image: etherWell,
     mark: false
   },
@@ -155,7 +155,7 @@ const buildingsData: Building[] = [
   },
   {
     name: '"Изумруд"',
-    level: 19,
+    level: 20,
     image: emerald,
     mark: false
   },
@@ -167,7 +167,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Таверна',
-    level: 28,
+    level: 29,
     image: naya,
     mark: false
   },
