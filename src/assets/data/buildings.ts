@@ -101,7 +101,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Дубильня',
-    level: 17,
+    level: 18,
     image: tannery,
     mark: false
   },
@@ -131,7 +131,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Маслобойный персс',
-    level: 17,
+    level: 18,
     image: oilPress,
     mark: false
   },
@@ -155,7 +155,7 @@ const buildingsData: Building[] = [
   },
   {
     name: '"Изумруд"',
-    level: 20,
+    level: 21,
     image: emerald,
     mark: false
   },
@@ -185,7 +185,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Палатка призывателя',
-    level: 17,
+    level: 18,
     image: elven,
     mark: false
   },
