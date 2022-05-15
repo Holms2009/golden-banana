@@ -167,13 +167,13 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Таверна',
-    level: 29,
+    level: 31,
     image: naya,
     mark: false
   },
   {
     name: 'Башня солнца',
-    level: 18,
+    level: 19,
     image: sunDragon,
     mark: false
   },
