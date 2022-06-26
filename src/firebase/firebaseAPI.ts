@@ -6,9 +6,15 @@ const fetchPlayers = async () => getDocs(collection(db, 'players'));
 
 const fetchWeek = async () => getDoc(doc(db, 'common', 'week'));
 
+const fetchBuildings = async () => getDocs(collection(db, 'buildings'));
+
 const addPlayer = (player: Player) => {
   return setDoc(doc(db, 'players', player.id), player);
 };
+
+const addBuilding = (building: Building) => {
+  return setDoc(doc(db, 'buildings', building.name), building);
+}
 
 const updateContribution = (data: NewContribution) => {
   return updateDoc(doc(db, 'players', data.id), {
@@ -22,6 +28,12 @@ const updatePlayerState = (id: string) => {
   });
 }
 
+const updateBuildingLevel = (building: Building) => {
+  return updateDoc(doc(db, 'buildings', building.name), {
+    level: building.level
+  })
+}
+
 const updateWeek = (data: Week) => {
   return updateDoc(doc(db, 'common', 'week'), data);
 }
@@ -33,9 +45,12 @@ const getGMPassword = () => {
 export {
   fetchPlayers,
   fetchWeek,
+  fetchBuildings,
   addPlayer,
+  addBuilding,
   updateContribution,
   updateWeek,
   getGMPassword,
-  updatePlayerState
+  updatePlayerState,
+  updateBuildingLevel
 }

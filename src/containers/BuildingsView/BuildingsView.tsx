@@ -4,18 +4,26 @@ import block from "bem-cn";
 import './BuildingsView.scss';
 
 import BuildingCard from "../../blocks/BuildingCard/BuildingCard";
-import buildingsData from "../../assets/data/buildings";
+import { useAppSelector } from "../../store/hooks";
+import { getGMState, selectBuildings } from "../../store/getters";
 
 const b = block('BuildingsView');
 
 const BuildingsView = () => {
+  let isGM = useAppSelector(getGMState);
+  let buildings: Building[] = useAppSelector(selectBuildings);
+
   return (
     <div className={b()}>
       <h2 className={b('title')}>Наши здания</h2>
       <div className={b('list')}>
         {
-          buildingsData.map(building => (
-            <BuildingCard name={building.name} level={building.level} imagePath={building.image} key={building.name} />
+          Array.from(buildings).map((building) => (
+            <BuildingCard
+              building={building}
+              showToggle={isGM}
+              key={building.name}
+            />
           ))
         }
       </div>

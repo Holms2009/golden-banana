@@ -1,11 +1,13 @@
 import { createSlice, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import thunk from 'redux-thunk';
 
-import { loadPlayers, getWeek, addPlayerAndUpdate, updatePlayerContributions } from './asyncActions';
+import { loadPlayers, loadBuildings, getWeek, addPlayerAndUpdate, updatePlayerContributions } from './asyncActions';
 
 type initialStateType = {
   players: Player[];
+  buildings: Building[];
   statusGetPlayers: 'loading' | 'finished' | 'failed' | null;
+  statusGetBuildings: 'loading' | 'finished' | 'failed' | null;
   currentWeek: Week | null;
   statusGetWeek: 'loading' | 'finished' | 'failed' | null;
   statusAddPlayer: 'loading' | 'finished' | 'failed' | null;
@@ -15,7 +17,9 @@ type initialStateType = {
 
 const initialState: initialStateType = {
   players: [],
+  buildings: [],
   statusGetPlayers: null,
+  statusGetBuildings: null,
   currentWeek: { current: 1, lastUpdate: '' },
   statusGetWeek: null,
   statusAddPlayer: null,
@@ -33,6 +37,8 @@ const appSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      
+      //Players loading
       .addCase(loadPlayers.pending, (state) => {
         state.statusGetPlayers = "loading";
       })
@@ -43,6 +49,20 @@ const appSlice = createSlice({
       .addCase(loadPlayers.rejected, (state) => {
         state.statusGetPlayers = "failed";
       })
+
+      //Buildings loading
+      .addCase(loadBuildings.pending, (state) => {
+        state.statusGetBuildings = "loading";
+      })
+      .addCase(loadBuildings.fulfilled, (state, action) => {
+        state.statusGetBuildings = "finished";
+        if (action.payload) state.buildings = action.payload;
+      })
+      .addCase(loadBuildings.rejected, (state) => {
+        state.statusGetBuildings = "failed";
+      })
+
+      //Week loading
       .addCase(getWeek.pending, (state) => {
         state.statusGetWeek = "loading";
       })
@@ -53,6 +73,7 @@ const appSlice = createSlice({
       .addCase(getWeek.rejected, (state) => {
         state.statusGetWeek = "failed";
       })
+
       .addCase(addPlayerAndUpdate.pending, (state) => {
         state.statusAddPlayer = "loading";
       })
@@ -62,6 +83,7 @@ const appSlice = createSlice({
       .addCase(addPlayerAndUpdate.rejected, (state) => {
         state.statusAddPlayer = "failed";
       })
+
       .addCase(updatePlayerContributions.pending, (state) => {
         state.statusUpdateContributions = "loading";
       })

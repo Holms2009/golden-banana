@@ -24,7 +24,7 @@ const PlayersList = ({ view = 'active' }: Props) => {
   const isGM = useAppSelector(getGMState);
   const week: Week = useAppSelector(selectCurrentWeek);
   const dispatch = useAppDispatch();
-  let selection;
+  let selection;  
 
   if (view === 'active') {
     const active = selectActivePlayers(players);
