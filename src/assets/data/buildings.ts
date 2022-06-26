@@ -29,7 +29,7 @@ import elven from '../images/elven.png';
 const buildingsData: Building[] = [
   {
     name: 'Кузница',
-    level: 18,
+    level: 19,
     image: smithy,
     mark: false
   },
@@ -185,7 +185,7 @@ const buildingsData: Building[] = [
   },
   {
     name: 'Палатка призывателя',
-    level: 18,
+    level: 19,
     image: elven,
     mark: false
   },
