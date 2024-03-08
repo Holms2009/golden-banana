@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import block from "bem-cn";
 import Skeleton from "react-loading-skeleton";
 
-import { selectPlayers, getDataFetchStatus } from "../../store/getters";
+import { getDataFetchStatus } from "../../store/getters";
 import { useAppSelector } from "../../store/hooks";
-import { selectPlayersByWeek, sortPlayersByContributions } from "../../utils/playersSort";
+import { sortContributions } from "../../utils/playersSort";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import './ContributionsTable.scss';
@@ -16,19 +16,13 @@ import character from '../../assets/images/wallace.png';
 const b = block('ContributionsTable');
 
 type Props = {
-  weekNumber: number;
-  date: string | null;
+  data: Contribution[]
 }
 
-const ContributionsTable = ({ weekNumber, date }: Props) => {
-  const [sortByContributions, setSortByContributions] = useState('gtl');
+const ContributionsTable = ({ data }: Props) => {
+  const [sortByContributions, setSortByContributions] = useState<'gtl' | 'ltg'>('gtl');
 
   const dataStatus = useAppSelector(getDataFetchStatus);
-  const data = useAppSelector(selectPlayers);
-
-  const thisWeekPlayers: WeekPlayer[] = selectPlayersByWeek(data, weekNumber);
-
-  if (sortByContributions) sortPlayersByContributions(thisWeekPlayers, sortByContributions)
 
   const changeBCSort = () => {
     if (sortByContributions === 'gtl') {
@@ -43,7 +37,7 @@ const ContributionsTable = ({ weekNumber, date }: Props) => {
       <thead className={b('head')}>
         <tr className={b('head-row')}>
           <th className={b('head-cell')}>
-            <div className={b('date')}>{date}</div>
+            <div className={b('date')}>{data[0].week}</div>
             <div className={b('head-cell-container')}>
               <img className={b('head-icon')} src={trophy} alt="Иконка кубка" />
               <span className={b('head-text')}>Место</span>
@@ -64,11 +58,11 @@ const ContributionsTable = ({ weekNumber, date }: Props) => {
         </tr>
       </thead>
       <tbody className={b('body')}>
-        {thisWeekPlayers.length ?
-          thisWeekPlayers.map((player, index) => (
-            <tr className={b('body-row', { gold: index === 0, silver: index === 1, bronze: index === 2 })} key={player.id}>
+        {data.length ?
+          sortContributions(data, sortByContributions).map((player, index) => (
+            <tr className={b('body-row', { gold: index === 0, silver: index === 1, bronze: index === 2 })} key={player.playerId}>
               <td className={b('body-cell', 'place')}>{index + 1}</td>
-              <td className={b('body-cell', 'nick')}>{player.nick}</td>
+              <td className={b('body-cell', 'nick')}>{player.playerName}</td>
               <td className={b('body-cell', 'contributions')}>{player.contribution.toLocaleString('ru')}</td>
             </tr>)) :
           dataStatus === 'loading' ?

@@ -15,6 +15,7 @@
     "@types/react-redux": "^7.1.22",
     "@types/redux-thunk": "^2.1.0",
     "bem-cn": "^3.0.1",
+    "date-fns": "^2.30.0",
     "firebase": "^9.4.1",
     "nanoid": "^3.2.0",
     "node-sass": "^7.0.1",

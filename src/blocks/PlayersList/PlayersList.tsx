@@ -3,67 +3,78 @@ import block from "bem-cn";
 
 import "./PlayersList.scss";
 
+import { sortPlayersByContributions } from "../../utils/playersSort";
 import PopUpWindow from "../PopUpWindow/PopUpWindow";
-import { getGMState, selectCurrentWeek, selectPlayers } from "../../store/getters";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { selectPlayersByWeek, sortPlayersByContributions, selectExPlayers, selectActivePlayers } from "../../utils/playersSort";
-import { updatePlayerState } from "../../firebase/firebaseAPI";
-import { loadPlayers } from "../../store/asyncActions";
-
+import { getPlayerFromGLById, getPlayerJoinDate, getPlayerName, getPlayerRank } from "../../utils";
+import { fetchPlayerData } from "../../smartyApi";
 
 const b = block('PlayersList');
 
 type Props = {
-  view?: 'active' | 'ex'
+  playersList: any[] | undefined;
 }
 
-const PlayersList = ({ view = 'active' }: Props) => {
-  const [showPopUp, setShowPopUp] = useState('')
+const PlayersList = ({ playersList }: Props) => {
+  const [pending, setPending] = useState(false);
+  const [popupData, setPopupData] = useState<any>(null);
 
-  const players: Player[] = useAppSelector(selectPlayers);
-  const isGM = useAppSelector(getGMState);
-  const week: Week = useAppSelector(selectCurrentWeek);
-  const dispatch = useAppDispatch();
-  let selection;  
+  async function handlePlayerClick(playerId: any) {
+    setPending(true);
 
-  if (view === 'active') {
-    const active = selectActivePlayers(players);
-    selection = selectPlayersByWeek(active, week.current, true);
-  } else {
-    selection = selectExPlayers(players);
+    try {
+      const result = await fetchPlayerData(playerId);
+      console.log(result);
+      
+      setPopupData(result);
+    } catch (err: any) {
+      console.log(err.message);
+    }
+
+    setPending(false);
   }
 
-  sortPlayersByContributions(selection, 'gtl');
-
-  function excludePlayer(playerId: string) {
-    updatePlayerState(playerId);
-    setShowPopUp('');
-    dispatch(loadPlayers());
+  function handlePopupClose() {
+    setPopupData(null);
   }
 
   return (
-    <ul className={b()}>
-      {
-        selection.map(player => (
-          <li className={b('player')} key={player.id}>
-            <div className={b('player-wrapper', { gm: isGM })}>
-              <p className={b('name')}>{player.nick}</p>
-              <p className={b('contributions')}>{player.contribution.toLocaleString('ru')}</p>
-              {isGM && view === 'active' ? <span className={b('player-remove')} onClick={() => { setShowPopUp(player.id) }}></span> : null}
-              {showPopUp === player.id ?
-                <PopUpWindow
-                  title="Внимание!"
-                  message={"Вы действительно хотите исключить игрока " + player.nick + ' ?'}
-                  handleClose={() => { setShowPopUp('') }}
-                  showButton={true}
-                  onClickHandler={excludePlayer.bind(null, player.id)}
-                /> :
-                null}
+    <>
+      <ul className={b({ pending })}>
+        {
+          playersList && sortPlayersByContributions(playersList, 'gtl').map(player => (
+            <li className={b('player')} onClick={() => handlePlayerClick(player._id)} key={player._id}>
+              <div className={b('player-wrapper')}>
+                <p className={b('name')}>{getPlayerName(player.name)}</p>
+                <p className={b('contributions')}>{player.invst.toLocaleString('ru')}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+      {(popupData && playersList) &&
+        <PopUpWindow title={getPlayerName(popupData.name)} handleClose={handlePopupClose}>
+          <div className={b('popup')}>
+            <div className={b('popup-line')}>
+              <span className={b('popup-item-name')}>Уровень:</span>
+              <span className={b('popup-item-value')}>{popupData.level}</span>
             </div>
-          </li>
-        ))
+            <div className={b('popup-line')}>
+              <span className={b('popup-item-name')}>Звание:</span>
+              <span className={b('popup-item-value')}>{getPlayerRank(getPlayerFromGLById(playersList, popupData._id).rank)}</span>
+            </div>
+            <div className={b('popup-line')}>
+              <span className={b('popup-item-name')}>Вклад:</span>
+              <span className={b('popup-item-value')}>{popupData.stats.invst.toLocaleString('ru')}</span>
+            </div>
+            <div className={b('popup-line')}>
+              <span className={b('popup-item-name')}>Присоединился:</span>
+              <span className={b('popup-item-value')}>{getPlayerJoinDate(playersList, popupData._id)}</span>
+            </div>
+          </div>
+        </PopUpWindow>
       }
-    </ul>
+    </>
+
   )
 }
 

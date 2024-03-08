@@ -10,28 +10,24 @@ type Week = {
 }
 
 type Contribution = {
-  weekNumber: number;
+  week: string;
+  playerId: number,
+  playerName: string,
   contribution: number;
 };
 
 type Player = {
-  nick: string;
-  contributionsHistory: Contribution[];
-  rank: string;
-  isInGuild: boolean;
-  id: string;
+  playerId?: number;
+  playerName: string;
+  playerRank: string;
+  contribution: number;
+  isInGuild:  0 | 1;
 }
 
 type WeekPlayer = {
   nick: string;
   contribution: number;
-  id: string;
-}
-
-type NewContribution = {
-  id: string;
-  nick: string;
-  contributionsHistory: Contribution[];
+  id: number;
 }
 
 type Building = {

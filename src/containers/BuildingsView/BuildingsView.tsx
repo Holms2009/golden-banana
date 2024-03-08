@@ -5,12 +5,11 @@ import './BuildingsView.scss';
 
 import BuildingCard from "../../blocks/BuildingCard/BuildingCard";
 import { useAppSelector } from "../../store/hooks";
-import { getGMState, selectBuildings } from "../../store/getters";
+import { selectBuildings } from "../../store/getters";
 
 const b = block('BuildingsView');
 
 const BuildingsView = () => {
-  let isGM = useAppSelector(getGMState);
   let buildings: Building[] = useAppSelector(selectBuildings);
 
   return (
@@ -21,7 +20,6 @@ const BuildingsView = () => {
           Array.from(buildings).map((building) => (
             <BuildingCard
               building={building}
-              showToggle={isGM}
               key={building.name}
             />
           ))

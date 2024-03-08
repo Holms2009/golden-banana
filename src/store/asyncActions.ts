@@ -1,23 +1,30 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { addPlayer, fetchPlayers, fetchBuildings, fetchWeek, updateContribution, updateWeek } from "../firebase/firebaseAPI";
+import { fetchPlayers, fetchBuildings, updateWeek, fetchContributionsHistory } from "../firebase/firebaseAPI";
+import { fetchGuildData } from "../smartyApi";
 
 const loadPlayers = createAsyncThunk(
   'players/loadPlayers',
   async (_, { rejectWithValue }) => {
     try {
-      const data: Player[] = [];
-
-      await fetchPlayers()
-        .then((res) => {          
-          res.forEach(item => {
-            data.push(item.data() as Player)
-          })
-        })
-
-      return data;
+      return await fetchPlayers()
+        .then(res => res.json())
+        .then(data => data)
     } catch (err: any) {
       return rejectWithValue(err.message);
+    }
+  }
+)
+
+const loadContributionsHistory = createAsyncThunk(
+  'players/contributionsHistory',
+  async (_, { rejectWithValue }) => {
+    try {
+      return await fetchContributionsHistory()
+        .then(res => res.json())
+        .then(data => data)
+    } catch (err: any) {
+      rejectWithValue(err);
     }
   }
 )
@@ -29,7 +36,7 @@ const loadBuildings = createAsyncThunk(
       const data: Building[] = [];
 
       await fetchBuildings()
-        .then((res) => {               
+        .then((res) => {
           res.forEach(item => {
             data.push(item.data() as Building)
           })
@@ -38,47 +45,6 @@ const loadBuildings = createAsyncThunk(
       return data;
     } catch (err: any) {
       return rejectWithValue(err.message);
-    }
-  }
-)
-
-const getWeek = createAsyncThunk(
-  'week/get',
-  async (_, { rejectWithValue }) => {
-    try {
-      let data;
-
-      await fetchWeek()
-        .then((res) => {
-          data = res.data() as Week;
-        })
-
-      return data;
-    } catch (err: any) {
-      console.log(err.message);
-      return rejectWithValue(err.message);
-    }
-  }
-)
-
-const addPlayerAndUpdate = createAsyncThunk(
-  'players/addPlayer',
-  async (player: Player) => {
-    try {
-      addPlayer(player);
-    } catch (err: any) {
-      console.log(err.message);
-    }
-  }
-)
-
-const updatePlayerContributions = createAsyncThunk(
-  'playets/updateContributions',
-  async (data: NewContribution) => {
-    try {
-      await updateContribution(data);
-    } catch (err: any) {
-      console.log(err.message);
     }
   }
 )
@@ -95,4 +61,21 @@ const updateWeekAction = createAsyncThunk(
   }
 )
 
-export { loadPlayers, loadBuildings, getWeek, addPlayerAndUpdate, updatePlayerContributions, updateWeekAction }
+const loadGuildData = createAsyncThunk(
+  'guild/loadData',
+  async (guildId: string) => {
+    try {
+      return await fetchGuildData(guildId);
+    } catch (err: any) {
+      console.log(err.message);      
+    }
+  }
+)
+
+export {
+  loadPlayers,
+  loadBuildings,
+  loadContributionsHistory,
+  updateWeekAction,
+  loadGuildData
+}
