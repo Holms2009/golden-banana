@@ -1,3 +1,5 @@
+@import './assets/styles/colors';
+
 @font-face {
   font-family: 'Curse Casual';
   font-weight: 400;
@@ -15,8 +17,26 @@ body {
   * {
     font-family: 'Curse Casual', sans-serif;
   }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primaryBorder;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $primaryBG;
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }

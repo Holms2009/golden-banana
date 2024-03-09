@@ -56,7 +56,7 @@ const ContributionsTable = ({ data }: Props) => {
       <tbody className={b('body')}>
         {data.data.length ?
           sortContributions(data.data, sortByContributions).map((item, index) => (
-            <tr className={b('body-row', { gold: index === 0, silver: index === 1, bronze: index === 2 })} key={item.name}>
+            <tr className={b('body-row', { gold: index === 0, silver: index === 1, bronze: index === 2 })} key={item.id}>
               <td className={b('body-cell', 'place')}>{index + 1}</td>
               <td className={b('body-cell', 'nick')}>{item.name}</td>
               <td className={b('body-cell', 'contributions')}>{item.value.toLocaleString('ru')}</td>

@@ -6,12 +6,28 @@ import './MainView.scss';
 import PlayersList from "../../blocks/PlayersList/PlayersList";
 import Timer from "../../blocks/Timer/Timer";
 import { useAppSelector } from "../../store/hooks";
-import { getGuildData } from "../../store/getters";
+import { getContributionsHistory, getGuildData } from "../../store/getters";
+import { createContributions } from "../../utils";
 
 const b = block('MainView');
 
+declare global {
+  interface Window {
+    calculate: any;
+  }
+}
+
 const MainView = () => {
   const guildData = useAppSelector(getGuildData);
+  const history = useAppSelector(getContributionsHistory);
+
+  useEffect(() => {
+    window.calculate = () => {
+      if (guildData && history) {
+        createContributions(guildData?.members, history[0])
+      }
+    }
+  }, [])
 
   useEffect(() => {
     console.log(guildData);

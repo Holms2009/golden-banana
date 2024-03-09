@@ -9,12 +9,12 @@ const loadHistory = createAsyncThunk(
   'players/contributionsHistory',
   async (_, { rejectWithValue }) => {
     try {
-      const data: any[] = [];
+      const data: THistoryItem[] = [];
 
       await fetchHistory()
         .then((res) => {
           res.forEach(item => {
-            data.push(item.data())
+            data.push(item.data() as THistoryItem)
           })
         })
       

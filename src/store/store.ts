@@ -2,6 +2,7 @@ import { createSlice, configureStore, getDefaultMiddleware } from "@reduxjs/tool
 import thunk from 'redux-thunk';
 
 import { loadBuildings, loadHistory, loadGuildData } from './asyncActions';
+import { sortHistoryByDate } from "../utils/playersSort";
 
 type initialStateType = {
   buildings: Building[];
@@ -37,7 +38,7 @@ const appSlice = createSlice({
 
       //WContributions history loading
       .addCase(loadHistory.fulfilled, (state, action) => {
-        if (action.payload) state.contributionsHistory = action.payload;
+        if (action.payload) state.contributionsHistory = sortHistoryByDate(action.payload);
       })
 
       //Guild data

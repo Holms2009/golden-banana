@@ -26,6 +26,7 @@ const ContributionsView = () => {
           }) :
           null
       }
+      
     </div>
   )
 }

@@ -2,9 +2,9 @@
 @import '../../assets/styles/colors';
 
 .PlayersList {
-  margin          : 0;
-  padding         : 20px 30px 20px 50px;
-  width           : db(500);
+  margin : 0;
+  padding: 20px 30px 20px 50px;
+  width  : db(500);
 
   position: relative;
   overflow: hidden;
@@ -19,11 +19,11 @@
     content: '';
 
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
+    top     : 0;
+    right   : 0;
+    bottom  : 0;
+    left    : 0;
+    z-index : 100;
 
     background-color: transparentize($primaryBG, 0.5);
   }
@@ -33,21 +33,21 @@
     color    : $textColor;
     font-size: 25px;
     position : relative;
-    cursor: pointer;
+    cursor   : pointer;
 
     &:not(:last-of-type) {
       margin-bottom: 12px;
     }
 
     &::before {
-      content   : '';
+      content: '';
 
-      position  : absolute;
-      bottom    : -1px;
-      left      : 0;
+      position: absolute;
+      bottom  : -1px;
+      left    : 0;
 
-      width     : 100%;
-      height    : 1px;
+      width : 100%;
+      height: 1px;
 
       background: linear-gradient(90deg, rgba(0, 0, 0, 0), gold, rgba(0, 0, 0, 0));
       transition: all 0.3s ease;
@@ -74,17 +74,19 @@
   }
 
   &__popup {
-    min-width: 600px;
-    padding: 0 40px;
+    box-sizing: border-box;
+
+    min-width: db(600);
+    padding  : 0 40px;
 
     &-line {
-      width: 100%;
-      display: flex;
+      width          : 100%;
+      display        : flex;
       justify-content: space-between;
 
-      font-size: 28px;
+      font-size  : 28px;
       font-weight: 500;
-      color: $textColor;
+      color      : $textColor;
 
       &:not(:first-child) {
         margin-top: 8px;
@@ -114,14 +116,26 @@
         margin-bottom: 10px;
       }
     }
+
+    &__popup {
+      min-width: d(600);
+    }
   }
 
   @media screen and (max-width: 1024px) {
     width: ds(350);
+
+    &__popup {
+      min-width: ds(550);
+    }
   }
 
   @media screen and (max-width: 768px) {
     width: t(350);
+
+    &__popup {
+      min-width: t(500);
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -129,6 +143,19 @@
 
     &__player {
       font-size: 18px;
+    }
+
+    &__popup {
+      min-width: 100%;
+      padding  : 0;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    &__popup {
+      &-line {
+        font-size: 20px;
+      }
     }
   }
 }
