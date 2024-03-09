@@ -5,13 +5,12 @@ import './ContributionsView.scss';
 
 import ContributionsTable from "../../blocks/ContributionsTable/ContributionsTable";
 import { useAppSelector } from "../../store/hooks";
-import { getContributionsHistory, getGuildData } from "../../store/getters";
+import { getContributionsHistory } from "../../store/getters";
 
 const b = block('ContributionsView');
 
 const ContributionsView = () => {
   const contributions = useAppSelector(getContributionsHistory);
-  const guildData = useAppSelector(getGuildData);
 
   return (
     <div className={b()}>
@@ -20,7 +19,7 @@ const ContributionsView = () => {
       <h2 className={b('title')}>Вклады за предыдущие недели</h2>
       {
         contributions.length > 1 ?
-          contributions.map((data, index) => {
+          contributions.map((data: THistoryItem, index: number) => {
             return index === 0 ?
               null :
               <ContributionsTable data={data} key={index} />

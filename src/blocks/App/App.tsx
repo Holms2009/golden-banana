@@ -9,16 +9,15 @@ import ContributionsView from '../../containers/ContributionsView/ContributionsV
 import BuildingsView from '../../containers/BuildingsView/BuildingsView';
 
 import { useAppDispatch } from "../../store/hooks";
-import { loadBuildings, loadPlayers, loadContributionsHistory, loadGuildData } from "../../store/asyncActions";
+import { loadBuildings, loadHistory, loadGuildData } from "../../store/asyncActions";
 import { useEffect } from "react";
 
 function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(loadPlayers());
     dispatch(loadBuildings());
-    dispatch(loadContributionsHistory());
+    dispatch(loadHistory());
     dispatch(loadGuildData('5ec6ce5110ef43123880ef24'))
   })
 

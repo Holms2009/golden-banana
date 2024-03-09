@@ -5,9 +5,9 @@ async function fetchApiData(url: string) {
 }
 
 export async function fetchGuildData(guildId: string) {
-  return await fetchApiData(`/info/city/${guildId}`);  
+  return await fetchApiData(`/info/city/${guildId}`) as TGuild;  
 }
 
 export async function fetchPlayerData(playerId: string) {
-  return await fetchApiData(`/info/player/${playerId}`);  
+  return await fetchApiData(`/info/player/${playerId}`) as TPlayer;  
 }

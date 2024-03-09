@@ -4,30 +4,75 @@ type MenuItem = {
   link: string;
 }
 
-type Week = {
-  current: number;
-  lastUpdate: string;
+type THistoryItem = {
+  date: number;
+  data: TContribution[];
 }
 
-type Contribution = {
-  week: string;
-  playerId: number,
-  playerName: string,
-  contribution: number;
-};
-
-type Player = {
-  playerId?: number;
-  playerName: string;
-  playerRank: string;
-  contribution: number;
-  isInGuild:  0 | 1;
+type TContribution = {
+  id: string;
+  name: string;
+  value: number;
 }
 
-type WeekPlayer = {
-  nick: string;
-  contribution: number;
-  id: number;
+type TPlayer = {
+  _id: string;
+  name: string;
+  level: number;
+  city: string;
+  cityName: string;
+  cityLevel: number;
+  stats: {
+    lvl: number;
+    invst: number;
+  },
+  count: number;
+  errorMessage: string;
+}
+
+
+// Guild data types
+
+type TGuild = {
+  _id: string;
+  name: string;
+  popLimit: number;
+  members: TGuildMember[];
+  buildings: TGuildBuilding[];
+  settings: {
+    join: number;
+    minLevel: number;
+    lang: string;
+    pick: string;
+    pickNext: number;
+    message: string;
+  };
+  board: {
+    bounties: string[];
+    prevContributors: string[];
+    currency: number;
+  };
+  boosts: string[];
+  status: string;
+  count: number;
+  errorMessage: string;
+}
+
+type TGuildMember = {
+  _id: string;
+  name: string;
+  level: number;
+  rank: number;
+  joined: number;
+  invst: number;
+  collection: number;
+}
+
+type TGuildBuilding = {
+  uid: string;
+  level: number;
+  minLevel: number;
+  nextAt: number;
 }
 
 type Building = {
@@ -36,6 +81,9 @@ type Building = {
   image: string;
   mark: boolean;
 }
+
+
+// Common types
 
 type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;

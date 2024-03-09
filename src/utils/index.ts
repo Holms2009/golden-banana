@@ -13,10 +13,10 @@ export function getPlayerRank(rankId: number) {
   }
 }
 
-export function getPlayerFromGLById(list: any[], playerId: number) {
+export function getPlayerFromGLById(list: any[], playerId: string) {
   return list.find((player) => player._id === playerId);
 }
 
-export function getPlayerJoinDate(list: any[], playerId: number) {
+export function getPlayerJoinDate(list: any[], playerId: string) {
   return new Date(getPlayerFromGLById(list, playerId).joined).toLocaleDateString('ru');
 }

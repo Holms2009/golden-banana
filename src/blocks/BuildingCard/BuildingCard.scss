@@ -68,43 +68,6 @@
     color      : #FDBF1A;
   }
 
-  &__toggle {
-    display       : flex;
-    flex-direction: column;
-
-    &-up {
-      margin-bottom  : 6px;
-      background     : url('../../assets/images/triangle-up.svg') no-repeat 50% 50%;
-      background-size: cover;
-
-      &:hover {
-        transform: translateY(-2px);
-      }
-    }
-
-    &-down {
-      background-color: red;
-      background      : url('../../assets/images/triangle-down.svg') no-repeat 50% 50%;
-      background-size : cover;
-
-      &:hover {
-        transform: translateY(2px);
-      }
-    }
-
-    &-up,
-    &-down {
-      width     : 20px;
-      height    : 10px;
-      cursor    : pointer;
-      transition: all 0.3s ease;
-
-      &:active {
-        transform: translateY(0);
-      }
-    }
-  }
-
   &:hover {
     transform: translateY(-5px);
   }

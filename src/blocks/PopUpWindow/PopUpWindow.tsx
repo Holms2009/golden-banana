@@ -1,4 +1,4 @@
-import React, { Children, MouseEventHandler } from "react";
+import React, { MouseEventHandler } from "react";
 import block from "bem-cn";
 
 import './PopUpWindow.scss';

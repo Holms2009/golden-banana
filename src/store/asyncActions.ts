@@ -1,28 +1,24 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { fetchPlayers, fetchBuildings, updateWeek, fetchContributionsHistory } from "../firebase/firebaseAPI";
+import { fetchBuildings, fetchHistory } from "../firebase/firebaseAPI";
 import { fetchGuildData } from "../smartyApi";
 
-const loadPlayers = createAsyncThunk(
-  'players/loadPlayers',
-  async (_, { rejectWithValue }) => {
-    try {
-      return await fetchPlayers()
-        .then(res => res.json())
-        .then(data => data)
-    } catch (err: any) {
-      return rejectWithValue(err.message);
-    }
-  }
-)
 
-const loadContributionsHistory = createAsyncThunk(
+
+const loadHistory = createAsyncThunk(
   'players/contributionsHistory',
   async (_, { rejectWithValue }) => {
     try {
-      return await fetchContributionsHistory()
-        .then(res => res.json())
-        .then(data => data)
+      const data: any[] = [];
+
+      await fetchHistory()
+        .then((res) => {
+          res.forEach(item => {
+            data.push(item.data())
+          })
+        })
+      
+      return data;
     } catch (err: any) {
       rejectWithValue(err);
     }
@@ -49,17 +45,6 @@ const loadBuildings = createAsyncThunk(
   }
 )
 
-const updateWeekAction = createAsyncThunk(
-  'week/update',
-  async (data: Week) => {
-    try {
-      await updateWeek(data);
-    } catch (err: any) {
-      console.log(err.message);
-
-    }
-  }
-)
 
 const loadGuildData = createAsyncThunk(
   'guild/loadData',
@@ -73,9 +58,7 @@ const loadGuildData = createAsyncThunk(
 )
 
 export {
-  loadPlayers,
+  loadHistory,
   loadBuildings,
-  loadContributionsHistory,
-  updateWeekAction,
   loadGuildData
 }

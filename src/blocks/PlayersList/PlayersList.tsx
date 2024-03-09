@@ -11,14 +11,14 @@ import { fetchPlayerData } from "../../smartyApi";
 const b = block('PlayersList');
 
 type Props = {
-  playersList: any[] | undefined;
+  playersList: TGuildMember[] | undefined;
 }
 
 const PlayersList = ({ playersList }: Props) => {
   const [pending, setPending] = useState(false);
-  const [popupData, setPopupData] = useState<any>(null);
+  const [popupData, setPopupData] = useState<TPlayer | null>(null);
 
-  async function handlePlayerClick(playerId: any) {
+  async function handlePlayerClick(playerId: string) {
     setPending(true);
 
     try {

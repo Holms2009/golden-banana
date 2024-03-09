@@ -26,7 +26,7 @@ const MainView = () => {
           <h2 className={b('title')} >{'Наши игроки'}</h2>
           <span className={b('title-icon')}></span>
         </div>
-        <PlayersList playersList={guildData.members} />
+        {guildData && <PlayersList playersList={guildData.members} />}
       </div>
       <div className={b('bananas-left')}>
         <span className={b('banana', { one: true })}></span>
