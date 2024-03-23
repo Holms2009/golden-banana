@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import block from "bem-cn";
 
 import './ContributionsView.scss';
@@ -11,6 +11,11 @@ const b = block('ContributionsView');
 
 const ContributionsView = () => {
   const contributions = useAppSelector(getContributionsHistory);
+
+  useEffect(() => {
+    console.log(contributions);
+    
+  }, [])
 
   return (
     <div className={b()}>

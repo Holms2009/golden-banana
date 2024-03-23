@@ -36,8 +36,9 @@ export async function createContributions(players: TGuildMember[], lastWeek?: TH
       name: getPlayerName(player.name),
       id: player._id,
       value: lastContribution ?
-        player.invst - lastContribution.value :
-        player.invst - Number(window.prompt(`Игрок ${getPlayerName(player.name)}`))
+        player.invst - lastContribution.overall :
+        player.invst - Number(window.prompt(`Игрок ${getPlayerName(player.name)}`)),
+      overall: player.invst
     });
   })
 

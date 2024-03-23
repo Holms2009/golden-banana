@@ -13,6 +13,7 @@ type TContribution = {
   id: string;
   name: string;
   value: number;
+  overall: number;
 }
 
 type TPlayer = {

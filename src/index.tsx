@@ -8,10 +8,6 @@ import './index.scss';
 
 import App from './blocks/App/App';
 
-declare global {
-  interface Window { createContributions: any }
-}
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

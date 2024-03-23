@@ -29,10 +29,6 @@ const MainView = () => {
     }
   }, [])
 
-  useEffect(() => {
-    console.log(guildData);
-  }, [guildData])
-
   return (
     <div className={b()}>
       <Timer title="Нашей гильдии:" from={new Date(2020, 4, 21, 0, 0, 0)}/>
